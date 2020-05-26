@@ -6,7 +6,7 @@ import (
 	"strconv"
 
 	"github.com/antchfx/htmlquery"
-	"github.com/ytnobody/mysqlerror/definition"
+	"github.com/ytnobody/gomysqlerror/definition"
 	"golang.org/x/net/html"
 )
 

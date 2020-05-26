@@ -1,4 +1,4 @@
-module github.com/ytnobody/mysqlerror
+module github.com/ytnobody/gomysqlerror
 
 go 1.12
 

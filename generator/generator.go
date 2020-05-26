@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/ytnobody/mysqlerror/definition"
-	"github.com/ytnobody/mysqlerror/scraper"
+	"github.com/ytnobody/gomysqlerror/definition"
+	"github.com/ytnobody/gomysqlerror/scraper"
 )
 
 func GenerateErrorDefinitions(mysqlVersion string) {
@@ -21,7 +21,7 @@ func generateCode(mysqlVersion string, errDefList []definition.ErrorDefinition) 
 package v%serror
 
 import (
-	"github.com/ytnobody/mysqlerror/definition"
+	"github.com/ytnobody/gomysqlerror/definition"
 )
 
 var ErrorMap = map[int]definition.ErrorDefinition{
