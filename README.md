@@ -37,3 +37,8 @@ func (a MyApp) registerUser(email string, name string) error {
 
 ```
 
+## Compatible MySQL Versions
+
+* 5.6 -> use `github.com/ytnobody/gomysqlerror/v56error`
+* 5.7 -> use `github.com/ytnobody/gomysqlerror/v57error`
+* 8.0 -> use `github.com/ytnobody/gomysqlerror/v80error`
