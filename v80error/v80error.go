@@ -115,7 +115,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     1117: definition.ErrorDefinition{ErrorNumber:1117, ErrorType:"ServerError", Symbol:"ER_TOO_MANY_FIELDS", SQLState:"HY000", Message:"Too many columns ", Description:"", MySQLVersion:"8.0"},
     1118: definition.ErrorDefinition{ErrorNumber:1118, ErrorType:"ServerError", Symbol:"ER_TOO_BIG_ROWSIZE", SQLState:"42000", Message:"Row size too large. The maximum row size for the used table type, not counting BLOBs, is %ld. This includes storage overhead, check the manual. You have to change some columns to TEXT or BLOBs ", Description:"", MySQLVersion:"8.0"},
     1119: definition.ErrorDefinition{ErrorNumber:1119, ErrorType:"ServerError", Symbol:"ER_STACK_OVERRUN", SQLState:"HY000", Message:"Thread stack overrun: Used: %ld of a %ld stack. Use 'mysqld --thread_stack=#' to specify a bigger stack if needed ", Description:"", MySQLVersion:"8.0"},
-    1120: definition.ErrorDefinition{ErrorNumber:1120, ErrorType:"ServerError", Symbol:"ER_WRONG_OUTER_JOIN", SQLState:"42000", Message:"Cross dependency found in OUTER JOIN", Description:"ER_WRONG_OUTER_JOIN was removed after 8.0.0. ", MySQLVersion:"8.0"},
     1120: definition.ErrorDefinition{ErrorNumber:1120, ErrorType:"ServerError", Symbol:"ER_WRONG_OUTER_JOIN_UNUSED", SQLState:"42000", Message:"Cross dependency found in OUTER JOIN", Description:"ER_WRONG_OUTER_JOIN_UNUSED was added in 8.0.1. ", MySQLVersion:"8.0"},
     1121: definition.ErrorDefinition{ErrorNumber:1121, ErrorType:"ServerError", Symbol:"ER_NULL_COLUMN_IN_INDEX", SQLState:"42000", Message:"Table handler doesn't support NULL in given index. Please change column '%s' to be NOT NULL or use another handler ", Description:"", MySQLVersion:"8.0"},
     1122: definition.ErrorDefinition{ErrorNumber:1122, ErrorType:"ServerError", Symbol:"ER_CANT_FIND_UDF", SQLState:"HY000", Message:"Can't load function '%s' ", Description:"", MySQLVersion:"8.0"},
@@ -753,7 +752,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     1833: definition.ErrorDefinition{ErrorNumber:1833, ErrorType:"ServerError", Symbol:"ER_FK_COLUMN_CANNOT_CHANGE_CHILD", SQLState:"HY000", Message:"Cannot change column '%s': used in a foreign key constraint '%s' of table '%s' ", Description:"", MySQLVersion:"8.0"},
     1835: definition.ErrorDefinition{ErrorNumber:1835, ErrorType:"ServerError", Symbol:"ER_MALFORMED_PACKET", SQLState:"HY000", Message:"Malformed communication packet. ", Description:"", MySQLVersion:"8.0"},
     1836: definition.ErrorDefinition{ErrorNumber:1836, ErrorType:"ServerError", Symbol:"ER_READ_ONLY_MODE", SQLState:"HY000", Message:"Running in read-only mode ", Description:"", MySQLVersion:"8.0"},
-    1837: definition.ErrorDefinition{ErrorNumber:1837, ErrorType:"ServerError", Symbol:"ER_GTID_NEXT_TYPE_UNDEFINED_GROUP", SQLState:"HY000", Message:"When @@SESSION.GTID_NEXT is set to a GTID, you must explicitly set it to a different value after a COMMIT or ROLLBACK. Please check GTID_NEXT variable manual page for detailed explanation. Current @@SESSION.GTID_NEXT is '%s'.", Description:"ER_GTID_NEXT_TYPE_UNDEFINED_GROUP was removed after 8.0.4. ", MySQLVersion:"8.0"},
     1837: definition.ErrorDefinition{ErrorNumber:1837, ErrorType:"ServerError", Symbol:"ER_GTID_NEXT_TYPE_UNDEFINED_GTID", SQLState:"HY000", Message:"When @@SESSION.GTID_NEXT is set to a GTID, you must explicitly set it to a different value after a COMMIT or ROLLBACK. Please check GTID_NEXT variable manual page for detailed explanation. Current @@SESSION.GTID_NEXT is '%s'.", Description:"ER_GTID_NEXT_TYPE_UNDEFINED_GTID was added in 8.0.11. ", MySQLVersion:"8.0"},
     1838: definition.ErrorDefinition{ErrorNumber:1838, ErrorType:"ServerError", Symbol:"ER_VARIABLE_NOT_SETTABLE_IN_SP", SQLState:"HY000", Message:"The system variable %s cannot be set in stored procedures. ", Description:"", MySQLVersion:"8.0"},
     1840: definition.ErrorDefinition{ErrorNumber:1840, ErrorType:"ServerError", Symbol:"ER_CANT_SET_GTID_PURGED_WHEN_GTID_EXECUTED_IS_NOT_EMPTY", SQLState:"HY000", Message:"@@GLOBAL.GTID_PURGED can only be set when @@GLOBAL.GTID_EXECUTED is empty. ", Description:"", MySQLVersion:"8.0"},
@@ -798,7 +796,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     1881: definition.ErrorDefinition{ErrorNumber:1881, ErrorType:"ServerError", Symbol:"ER_INNODB_FORCED_RECOVERY", SQLState:"HY000", Message:"Operation not allowed when innodb_force_recovery > 0. ", Description:"", MySQLVersion:"8.0"},
     1882: definition.ErrorDefinition{ErrorNumber:1882, ErrorType:"ServerError", Symbol:"ER_AES_INVALID_IV", SQLState:"HY000", Message:"The initialization vector supplied to %s is too short. Must be at least %d bytes long ", Description:"", MySQLVersion:"8.0"},
     1883: definition.ErrorDefinition{ErrorNumber:1883, ErrorType:"ServerError", Symbol:"ER_PLUGIN_CANNOT_BE_UNINSTALLED", SQLState:"HY000", Message:"Plugin '%s' cannot be uninstalled now. %s ", Description:"", MySQLVersion:"8.0"},
-    1884: definition.ErrorDefinition{ErrorNumber:1884, ErrorType:"ServerError", Symbol:"ER_GTID_UNSAFE_BINLOG_SPLITTABLE_STATEMENT_AND_GTID_GROUP", SQLState:"HY000", Message:"Cannot execute statement because it needs to be written to the binary log as multiple statements, and this is not allowed when @@SESSION.GTID_NEXT == 'UUID:NUMBER'.", Description:"ER_GTID_UNSAFE_BINLOG_SPLITTABLE_STATEMENT_AND_GTID_GROUP was removed after 8.0.4. ", MySQLVersion:"8.0"},
     1884: definition.ErrorDefinition{ErrorNumber:1884, ErrorType:"ServerError", Symbol:"ER_GTID_UNSAFE_BINLOG_SPLITTABLE_STATEMENT_AND_ASSIGNED_GTID", SQLState:"HY000", Message:"Cannot execute statement because it needs to be written to the binary log as multiple statements, and this is not allowed when @@SESSION.GTID_NEXT == 'UUID:NUMBER'.", Description:"ER_GTID_UNSAFE_BINLOG_SPLITTABLE_STATEMENT_AND_ASSIGNED_GTID was added in 8.0.11. ", MySQLVersion:"8.0"},
     1885: definition.ErrorDefinition{ErrorNumber:1885, ErrorType:"ServerError", Symbol:"ER_SLAVE_HAS_MORE_GTIDS_THAN_MASTER", SQLState:"HY000", Message:"Slave has more GTIDs than the master has, using the master's SERVER_UUID. This may indicate that the end of the binary log was truncated or that the last binary log file was lost, e.g., after a power or disk failure when sync_binlog != 1. The master may or may not have rolled back transactions that were already replicated to the slave. Suggest to replicate any transactions that master has rolled back from slave to master, and/or commit empty transactions on master to account for transactions that have been committed on master but are not included in GTID_EXECUTED. ", Description:"", MySQLVersion:"8.0"},
     1886: definition.ErrorDefinition{ErrorNumber:1886, ErrorType:"ServerError", Symbol:"ER_MISSING_KEY", SQLState:"HY000", Message:"The table '%s.%s' does not have the necessary key(s) defined on it. Please check the table definition and create index(s) accordingly.", Description:"ER_MISSING_KEY was added in 8.0.4. ", MySQLVersion:"8.0"},
@@ -1092,11 +1089,9 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     3594: definition.ErrorDefinition{ErrorNumber:3594, ErrorType:"ServerError", Symbol:"ER_WINDOW_INVALID_WINDOW_FUNC_ALIAS_USE", SQLState:"HY000", Message:"You cannot use the alias '%s' of an expression containing a window function in this context.'", Description:"ER_WINDOW_INVALID_WINDOW_FUNC_ALIAS_USE was added in 8.0.2. ", MySQLVersion:"8.0"},
     3595: definition.ErrorDefinition{ErrorNumber:3595, ErrorType:"ServerError", Symbol:"ER_WINDOW_NESTED_WINDOW_FUNC_USE_IN_WINDOW_SPEC", SQLState:"HY000", Message:"You cannot nest a window function in the specification of window '%s'.", Description:"ER_WINDOW_NESTED_WINDOW_FUNC_USE_IN_WINDOW_SPEC was added in 8.0.2. ", MySQLVersion:"8.0"},
     3596: definition.ErrorDefinition{ErrorNumber:3596, ErrorType:"ServerError", Symbol:"ER_WINDOW_ROWS_INTERVAL_USE", SQLState:"HY000", Message:"Window '%s': INTERVAL can only be used with RANGE frames.", Description:"ER_WINDOW_ROWS_INTERVAL_USE was added in 8.0.2. ", MySQLVersion:"8.0"},
-    3597: definition.ErrorDefinition{ErrorNumber:3597, ErrorType:"ServerError", Symbol:"ER_WINDOW_NO_GROUP_ORDER", SQLState:"HY000", Message:"ASC or DESC with GROUP BY isn't allowed with window functions", Description:"ER_WINDOW_NO_GROUP_ORDER was added in 8.0.2, removed after 8.0.12. ", MySQLVersion:"8.0"},
     3597: definition.ErrorDefinition{ErrorNumber:3597, ErrorType:"ServerError", Symbol:"ER_WINDOW_NO_GROUP_ORDER_UNUSED", SQLState:"HY000", Message:"ASC or DESC with GROUP BY isn't allowed with window functions", Description:"ER_WINDOW_NO_GROUP_ORDER_UNUSED was added in 8.0.13. ", MySQLVersion:"8.0"},
     3598: definition.ErrorDefinition{ErrorNumber:3598, ErrorType:"ServerError", Symbol:"ER_WINDOW_EXPLAIN_JSON", SQLState:"HY000", Message:"To get information about window functions use EXPLAIN FORMAT=JSON", Description:"ER_WINDOW_EXPLAIN_JSON was added in 8.0.2. ", MySQLVersion:"8.0"},
     3599: definition.ErrorDefinition{ErrorNumber:3599, ErrorType:"ServerError", Symbol:"ER_WINDOW_FUNCTION_IGNORES_FRAME", SQLState:"HY000", Message:"Window function '%s' ignores the frame clause of window '%s' and aggregates over the whole partition", Description:"ER_WINDOW_FUNCTION_IGNORES_FRAME was added in 8.0.2. ", MySQLVersion:"8.0"},
-    3600: definition.ErrorDefinition{ErrorNumber:3600, ErrorType:"ServerError", Symbol:"ER_WINDOW_SE_NOT_ACCEPTABLE", SQLState:"HY000", Message:"Windowing requires @@internal_tmp_mem_storage_engine=TempTable.", Description:"ER_WINDOW_SE_NOT_ACCEPTABLE was added in 8.0.2, removed after 8.0.3. ", MySQLVersion:"8.0"},
     3600: definition.ErrorDefinition{ErrorNumber:3600, ErrorType:"ServerError", Symbol:"ER_WL9236_NOW_UNUSED", SQLState:"HY000", Message:"Windowing requires @@internal_tmp_mem_storage_engine=TempTable.", Description:"ER_WL9236_NOW_UNUSED was added in 8.0.4. ", MySQLVersion:"8.0"},
     3601: definition.ErrorDefinition{ErrorNumber:3601, ErrorType:"ServerError", Symbol:"ER_INVALID_NO_OF_ARGS", SQLState:"HY000", Message:"Too many arguments for function %s: %lu", Description:"ER_INVALID_NO_OF_ARGS was added in 8.0.1. ", MySQLVersion:"8.0"},
     3602: definition.ErrorDefinition{ErrorNumber:3602, ErrorType:"ServerError", Symbol:"ER_FIELD_IN_GROUPING_NOT_GROUP_BY", SQLState:"HY000", Message:"Argument #%u of GROUPING function is not in GROUP BY", Description:"ER_FIELD_IN_GROUPING_NOT_GROUP_BY was added in 8.0.1. ", MySQLVersion:"8.0"},
@@ -1130,9 +1125,7 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     3630: definition.ErrorDefinition{ErrorNumber:3630, ErrorType:"ServerError", Symbol:"ER_PERSIST_ONLY_ACCESS_DENIED_ERROR", SQLState:"42000", Message:"Access denied", Description:"ER_PERSIST_ONLY_ACCESS_DENIED_ERROR was added in 8.0.3. ", MySQLVersion:"8.0"},
     3631: definition.ErrorDefinition{ErrorNumber:3631, ErrorType:"ServerError", Symbol:"ER_CMD_NEED_SUPER", SQLState:"HY000", Message:"You need the SUPER privilege for command '%s'", Description:"ER_CMD_NEED_SUPER was added in 8.0.3. ", MySQLVersion:"8.0"},
     3632: definition.ErrorDefinition{ErrorNumber:3632, ErrorType:"ServerError", Symbol:"ER_PATH_IN_DATADIR", SQLState:"HY000", Message:"Path is within the current data directory '%s'", Description:"ER_PATH_IN_DATADIR was added in 8.0.3. ", MySQLVersion:"8.0"},
-    3633: definition.ErrorDefinition{ErrorNumber:3633, ErrorType:"ServerError", Symbol:"ER_DDL_IN_PROGRESS", SQLState:"HY000", Message:"Concurrent DDL is performed during the operation. Please try again.", Description:"ER_DDL_IN_PROGRESS was added in 8.0.3, removed after 8.0.16. ", MySQLVersion:"8.0"},
     3633: definition.ErrorDefinition{ErrorNumber:3633, ErrorType:"ServerError", Symbol:"ER_CLONE_DDL_IN_PROGRESS", SQLState:"HY000", Message:"Concurrent DDL is performed during clone operation. Please try again.", Description:"ER_CLONE_DDL_IN_PROGRESS was added in 8.0.17. ", MySQLVersion:"8.0"},
-    3634: definition.ErrorDefinition{ErrorNumber:3634, ErrorType:"ServerError", Symbol:"ER_TOO_MANY_CONCURRENT_CLONES", SQLState:"HY000", Message:"Too many concurrent clone operations. Maximum allowed - %d.", Description:"ER_TOO_MANY_CONCURRENT_CLONES was added in 8.0.3, removed after 8.0.16. ", MySQLVersion:"8.0"},
     3634: definition.ErrorDefinition{ErrorNumber:3634, ErrorType:"ServerError", Symbol:"ER_CLONE_TOO_MANY_CONCURRENT_CLONES", SQLState:"HY000", Message:"Too many concurrent clone operations. Maximum allowed - %d.", Description:"ER_CLONE_TOO_MANY_CONCURRENT_CLONES was added in 8.0.17. ", MySQLVersion:"8.0"},
     3635: definition.ErrorDefinition{ErrorNumber:3635, ErrorType:"ServerError", Symbol:"ER_APPLIER_LOG_EVENT_VALIDATION_ERROR", SQLState:"HY000", Message:"The table in transaction %s does not comply with the requirements by an external plugin.", Description:"ER_APPLIER_LOG_EVENT_VALIDATION_ERROR was added in 8.0.3. ", MySQLVersion:"8.0"},
     3636: definition.ErrorDefinition{ErrorNumber:3636, ErrorType:"ServerError", Symbol:"ER_CTE_MAX_RECURSION_DEPTH", SQLState:"HY000", Message:"Recursive query aborted after %u iterations. Try increasing @@cte_max_recursion_depth to a larger value.", Description:"ER_CTE_MAX_RECURSION_DEPTH was added in 8.0.3. ", MySQLVersion:"8.0"},
@@ -1183,7 +1176,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     3681: definition.ErrorDefinition{ErrorNumber:3681, ErrorType:"ServerError", Symbol:"ER_SCHEMA_DIR_UNKNOWN", SQLState:"HY000", Message:"Schema '%s' does not exist, but schema directory '%s' was found. This must be resolved manually (e.g. by moving the schema directory to another location).", Description:"ER_SCHEMA_DIR_UNKNOWN was added in 8.0.4. ", MySQLVersion:"8.0"},
     3682: definition.ErrorDefinition{ErrorNumber:3682, ErrorType:"ServerError", Symbol:"ER_ONLY_IMPLEMENTED_FOR_SRID_0_AND_4326", SQLState:"22S00", Message:"Function %s is only defined for SRID 0 and SRID 4326.", Description:"ER_ONLY_IMPLEMENTED_FOR_SRID_0_AND_4326 was added in 8.0.4. ", MySQLVersion:"8.0"},
     3683: definition.ErrorDefinition{ErrorNumber:3683, ErrorType:"ServerError", Symbol:"ER_BINLOG_EXPIRE_LOG_DAYS_AND_SECS_USED_TOGETHER", SQLState:"HY000", Message:"The option expire_logs_days and binlog_expire_logs_seconds cannot be used together. Please use binlog_expire_logs_seconds to set the expire time (expire_logs_days is deprecated)", Description:"ER_BINLOG_EXPIRE_LOG_DAYS_AND_SECS_USED_TOGETHER was added in 8.0.11. ", MySQLVersion:"8.0"},
-    3684: definition.ErrorDefinition{ErrorNumber:3684, ErrorType:"ServerError", Symbol:"ER_REGEXP_STRING_NOT_TERMINATED", SQLState:"HY000", Message:"An output string could not be zero-terminated because the length exceeds the buffer capacity.", Description:"ER_REGEXP_STRING_NOT_TERMINATED was added in 8.0.4, removed after 8.0.4. ", MySQLVersion:"8.0"},
     3684: definition.ErrorDefinition{ErrorNumber:3684, ErrorType:"ServerError", Symbol:"ER_REGEXP_BUFFER_OVERFLOW", SQLState:"HY000", Message:"The result string is larger than the result buffer.", Description:"ER_REGEXP_BUFFER_OVERFLOW was added in 8.0.4. ", MySQLVersion:"8.0"},
     3685: definition.ErrorDefinition{ErrorNumber:3685, ErrorType:"ServerError", Symbol:"ER_REGEXP_ILLEGAL_ARGUMENT", SQLState:"HY000", Message:"Illegal argument to a regular expression.", Description:"ER_REGEXP_ILLEGAL_ARGUMENT was added in 8.0.4. ", MySQLVersion:"8.0"},
     3686: definition.ErrorDefinition{ErrorNumber:3686, ErrorType:"ServerError", Symbol:"ER_REGEXP_INDEX_OUTOFBOUNDS_ERROR", SQLState:"HY000", Message:"Index out of bounds in regular expression search.", Description:"ER_REGEXP_INDEX_OUTOFBOUNDS_ERROR was added in 8.0.4. ", MySQLVersion:"8.0"},
@@ -1204,7 +1196,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     3701: definition.ErrorDefinition{ErrorNumber:3701, ErrorType:"ServerError", Symbol:"ER_CANT_SET_ERROR_LOG_SERVICE", SQLState:"HY000", Message:"Value for %s got confusing at or around \"%s\". Syntax may be wrong, component may not be INSTALLed, or a component that does not support instances may be listed more than once.", Description:"ER_CANT_SET_ERROR_LOG_SERVICE was added in 8.0.4. ", MySQLVersion:"8.0"},
     3702: definition.ErrorDefinition{ErrorNumber:3702, ErrorType:"ServerError", Symbol:"ER_EMPTY_PIPELINE_FOR_ERROR_LOG_SERVICE", SQLState:"HY000", Message:"Setting an empty %s pipeline disables error logging!", Description:"ER_EMPTY_PIPELINE_FOR_ERROR_LOG_SERVICE was added in 8.0.4. ", MySQLVersion:"8.0"},
     3703: definition.ErrorDefinition{ErrorNumber:3703, ErrorType:"ServerError", Symbol:"ER_COMPONENT_FILTER_DIAGNOSTICS", SQLState:"HY000", Message:"filter %s: %s", Description:"ER_COMPONENT_FILTER_DIAGNOSTICS was added in 8.0.4. ", MySQLVersion:"8.0"},
-    3704: definition.ErrorDefinition{ErrorNumber:3704, ErrorType:"ServerError", Symbol:"ER_INNODB_CANNOT_BE_IGNORED", SQLState:"HY000", Message:"ignore-builtin-innodb is ignored and will be removed in future releases.", Description:"ER_INNODB_CANNOT_BE_IGNORED was added in 8.0.2, removed after 8.0.2. ", MySQLVersion:"8.0"},
     3704: definition.ErrorDefinition{ErrorNumber:3704, ErrorType:"ServerError", Symbol:"ER_NOT_IMPLEMENTED_FOR_CARTESIAN_SRS", SQLState:"22S00", Message:"%s(%s) has not been implemented for Cartesian spatial reference systems.", Description:"ER_NOT_IMPLEMENTED_FOR_CARTESIAN_SRS was added in 8.0.4. ", MySQLVersion:"8.0"},
     3705: definition.ErrorDefinition{ErrorNumber:3705, ErrorType:"ServerError", Symbol:"ER_NOT_IMPLEMENTED_FOR_PROJECTED_SRS", SQLState:"22S00", Message:"%s(%s) has not been implemented for projected spatial reference systems.", Description:"ER_NOT_IMPLEMENTED_FOR_PROJECTED_SRS was added in 8.0.4. ", MySQLVersion:"8.0"},
     3706: definition.ErrorDefinition{ErrorNumber:3706, ErrorType:"ServerError", Symbol:"ER_NONPOSITIVE_RADIUS", SQLState:"22003", Message:"Invalid radius provided to function %s: Radius must be greater than zero.", Description:"ER_NONPOSITIVE_RADIUS was added in 8.0.4. ", MySQLVersion:"8.0"},
@@ -1251,7 +1242,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     3747: definition.ErrorDefinition{ErrorNumber:3747, ErrorType:"ServerError", Symbol:"ER_RUNNING_APPLIER_PREVENTS_SWITCH_GLOBAL_BINLOG_FORMAT", SQLState:"HY000", Message:"Changing @@global.binlog_format or @@persist.binlog_format is disallowed when any replication channel applier thread is running. You could execute STOP SLAVE SQL_THREAD and try again.", Description:"ER_RUNNING_APPLIER_PREVENTS_SWITCH_GLOBAL_BINLOG_FORMAT was added in 8.0.13. ", MySQLVersion:"8.0"},
     3748: definition.ErrorDefinition{ErrorNumber:3748, ErrorType:"ServerError", Symbol:"ER_CLIENT_GTID_UNSAFE_CREATE_DROP_TEMP_TABLE_IN_TRX_IN_SBR", SQLState:"HY000", Message:"Statement violates GTID consistency: CREATE TEMPORARY TABLE and DROP TEMPORARY TABLE are not allowed inside a transaction or inside a procedure in a transactional context when @@session.binlog_format=STATEMENT.", Description:"ER_CLIENT_GTID_UNSAFE_CREATE_DROP_TEMP_TABLE_IN_TRX_IN_SBR was added in 8.0.13. ", MySQLVersion:"8.0"},
     3750: definition.ErrorDefinition{ErrorNumber:3750, ErrorType:"ServerError", Symbol:"ER_TABLE_WITHOUT_PK", SQLState:"HY000", Message:"Unable to create or change a table without a primary key, when the system variable 'sql_require_primary_key' is set. Add a primary key to the table or unset this variable to avoid this message. Note that tables without a primary key can cause performance problems in row-based replication, so please consult your DBA before changing this setting.", Description:"ER_TABLE_WITHOUT_PK was added in 8.0.13. ", MySQLVersion:"8.0"},
-    3751: definition.ErrorDefinition{ErrorNumber:3751, ErrorType:"ServerError", Symbol:"WARN_DATA_TRUNCATED_FUNCTIONAL_INDEX", SQLState:"01000", Message:"Data truncated for functional index '%s' at row %ld", Description:"WARN_DATA_TRUNCATED_FUNCTIONAL_INDEX was added in 8.0.13, removed after 8.0.16. ", MySQLVersion:"8.0"},
     3751: definition.ErrorDefinition{ErrorNumber:3751, ErrorType:"ServerError", Symbol:"ER_WARN_DATA_TRUNCATED_FUNCTIONAL_INDEX", SQLState:"01000", Message:"Data truncated for functional index '%s' at row %ld", Description:"ER_WARN_DATA_TRUNCATED_FUNCTIONAL_INDEX was added in 8.0.17. ", MySQLVersion:"8.0"},
     3752: definition.ErrorDefinition{ErrorNumber:3752, ErrorType:"ServerError", Symbol:"ER_WARN_DATA_OUT_OF_RANGE_FUNCTIONAL_INDEX", SQLState:"22003", Message:"Value is out of range for functional index '%s' at row %ld", Description:"ER_WARN_DATA_OUT_OF_RANGE_FUNCTIONAL_INDEX was added in 8.0.13. ", MySQLVersion:"8.0"},
     3753: definition.ErrorDefinition{ErrorNumber:3753, ErrorType:"ServerError", Symbol:"ER_FUNCTIONAL_INDEX_ON_JSON_OR_GEOMETRY_FUNCTION", SQLState:"42000", Message:"Cannot create a functional index on a function that returns a JSON or GEOMETRY value.", Description:"ER_FUNCTIONAL_INDEX_ON_JSON_OR_GEOMETRY_FUNCTION was added in 8.0.13. ", MySQLVersion:"8.0"},
@@ -1560,7 +1550,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     2062: definition.ErrorDefinition{ErrorNumber:2062, ErrorType:"ClientError", Symbol:"CR_INSECURE_API_ERR", SQLState:"", Message:"Insecure API function call: '%s' Use instead: '%s'", Description:"An insecure function call was detected. Modify the application to use the suggested alternative function instead. ", MySQLVersion:"8.0"},
     2063: definition.ErrorDefinition{ErrorNumber:2063, ErrorType:"ClientError", Symbol:"CR_FILE_NAME_TOO_LONG", SQLState:"", Message:"File name is too long", Description:"CR_FILE_NAME_TOO_LONG was added in 8.0.1. ", MySQLVersion:"8.0"},
     2064: definition.ErrorDefinition{ErrorNumber:2064, ErrorType:"ClientError", Symbol:"CR_SSL_FIPS_MODE_ERR", SQLState:"", Message:"Set FIPS mode ON/STRICT failed", Description:"CR_SSL_FIPS_MODE_ERR was added in 8.0.11. ", MySQLVersion:"8.0"},
-    2065: definition.ErrorDefinition{ErrorNumber:2065, ErrorType:"ClientError", Symbol:"CR_COMPRESSION_NOT_SUPPORTED", SQLState:"", Message:"Compression protocol not supported with asynchronous protocol", Description:"CR_COMPRESSION_NOT_SUPPORTED was added in 8.0.16, removed after 8.0.20. ", MySQLVersion:"8.0"},
     2065: definition.ErrorDefinition{ErrorNumber:2065, ErrorType:"ClientError", Symbol:"CR_DEPRECATED_COMPRESSION_NOT_SUPPORTED", SQLState:"", Message:"Compression protocol not supported with asynchronous protocol", Description:"CR_DEPRECATED_COMPRESSION_NOT_SUPPORTED was added in 8.0.21. ", MySQLVersion:"8.0"},
     2066: definition.ErrorDefinition{ErrorNumber:2066, ErrorType:"ClientError", Symbol:"CR_COMPRESSION_WRONGLY_CONFIGURED", SQLState:"", Message:"Connection failed due to wrongly configured compression algorithm", Description:"CR_COMPRESSION_WRONGLY_CONFIGURED was added in 8.0.18. ", MySQLVersion:"8.0"},
     2067: definition.ErrorDefinition{ErrorNumber:2067, ErrorType:"ClientError", Symbol:"CR_KERBEROS_USER_NOT_FOUND", SQLState:"", Message:"SSO user not found, Please perform SSO authentication using kerberos.", Description:"CR_KERBEROS_USER_NOT_FOUND was added in 8.0.20. ", MySQLVersion:"8.0"},
@@ -1769,7 +1758,6 @@ ER_NO int = 1002
     ER_TOO_MANY_FIELDS int = 1117
     ER_TOO_BIG_ROWSIZE int = 1118
     ER_STACK_OVERRUN int = 1119
-    ER_WRONG_OUTER_JOIN int = 1120
     ER_WRONG_OUTER_JOIN_UNUSED int = 1120
     ER_NULL_COLUMN_IN_INDEX int = 1121
     ER_CANT_FIND_UDF int = 1122
@@ -2407,7 +2395,6 @@ ER_NO int = 1002
     ER_FK_COLUMN_CANNOT_CHANGE_CHILD int = 1833
     ER_MALFORMED_PACKET int = 1835
     ER_READ_ONLY_MODE int = 1836
-    ER_GTID_NEXT_TYPE_UNDEFINED_GROUP int = 1837
     ER_GTID_NEXT_TYPE_UNDEFINED_GTID int = 1837
     ER_VARIABLE_NOT_SETTABLE_IN_SP int = 1838
     ER_CANT_SET_GTID_PURGED_WHEN_GTID_EXECUTED_IS_NOT_EMPTY int = 1840
@@ -2452,7 +2439,6 @@ ER_NO int = 1002
     ER_INNODB_FORCED_RECOVERY int = 1881
     ER_AES_INVALID_IV int = 1882
     ER_PLUGIN_CANNOT_BE_UNINSTALLED int = 1883
-    ER_GTID_UNSAFE_BINLOG_SPLITTABLE_STATEMENT_AND_GTID_GROUP int = 1884
     ER_GTID_UNSAFE_BINLOG_SPLITTABLE_STATEMENT_AND_ASSIGNED_GTID int = 1884
     ER_SLAVE_HAS_MORE_GTIDS_THAN_MASTER int = 1885
     ER_MISSING_KEY int = 1886
@@ -2746,11 +2732,9 @@ ER_NO int = 1002
     ER_WINDOW_INVALID_WINDOW_FUNC_ALIAS_USE int = 3594
     ER_WINDOW_NESTED_WINDOW_FUNC_USE_IN_WINDOW_SPEC int = 3595
     ER_WINDOW_ROWS_INTERVAL_USE int = 3596
-    ER_WINDOW_NO_GROUP_ORDER int = 3597
     ER_WINDOW_NO_GROUP_ORDER_UNUSED int = 3597
     ER_WINDOW_EXPLAIN_JSON int = 3598
     ER_WINDOW_FUNCTION_IGNORES_FRAME int = 3599
-    ER_WINDOW_SE_NOT_ACCEPTABLE int = 3600
     ER_WL9236_NOW_UNUSED int = 3600
     ER_INVALID_NO_OF_ARGS int = 3601
     ER_FIELD_IN_GROUPING_NOT_GROUP_BY int = 3602
@@ -2784,9 +2768,7 @@ ER_NO int = 1002
     ER_PERSIST_ONLY_ACCESS_DENIED_ERROR int = 3630
     ER_CMD_NEED_SUPER int = 3631
     ER_PATH_IN_DATADIR int = 3632
-    ER_DDL_IN_PROGRESS int = 3633
     ER_CLONE_DDL_IN_PROGRESS int = 3633
-    ER_TOO_MANY_CONCURRENT_CLONES int = 3634
     ER_CLONE_TOO_MANY_CONCURRENT_CLONES int = 3634
     ER_APPLIER_LOG_EVENT_VALIDATION_ERROR int = 3635
     ER_CTE_MAX_RECURSION_DEPTH int = 3636
@@ -2837,7 +2819,6 @@ ER_NO int = 1002
     ER_SCHEMA_DIR_UNKNOWN int = 3681
     ER_ONLY_IMPLEMENTED_FOR_SRID_0_AND_4326 int = 3682
     ER_BINLOG_EXPIRE_LOG_DAYS_AND_SECS_USED_TOGETHER int = 3683
-    ER_REGEXP_STRING_NOT_TERMINATED int = 3684
     ER_REGEXP_BUFFER_OVERFLOW int = 3684
     ER_REGEXP_ILLEGAL_ARGUMENT int = 3685
     ER_REGEXP_INDEX_OUTOFBOUNDS_ERROR int = 3686
@@ -2858,7 +2839,6 @@ ER_NO int = 1002
     ER_CANT_SET_ERROR_LOG_SERVICE int = 3701
     ER_EMPTY_PIPELINE_FOR_ERROR_LOG_SERVICE int = 3702
     ER_COMPONENT_FILTER_DIAGNOSTICS int = 3703
-    ER_INNODB_CANNOT_BE_IGNORED int = 3704
     ER_NOT_IMPLEMENTED_FOR_CARTESIAN_SRS int = 3704
     ER_NOT_IMPLEMENTED_FOR_PROJECTED_SRS int = 3705
     ER_NONPOSITIVE_RADIUS int = 3706
@@ -2905,7 +2885,6 @@ ER_NO int = 1002
     ER_RUNNING_APPLIER_PREVENTS_SWITCH_GLOBAL_BINLOG_FORMAT int = 3747
     ER_CLIENT_GTID_UNSAFE_CREATE_DROP_TEMP_TABLE_IN_TRX_IN_SBR int = 3748
     ER_TABLE_WITHOUT_PK int = 3750
-    WARN_DATA_TRUNCATED_FUNCTIONAL_INDEX int = 3751
     ER_WARN_DATA_TRUNCATED_FUNCTIONAL_INDEX int = 3751
     ER_WARN_DATA_OUT_OF_RANGE_FUNCTIONAL_INDEX int = 3752
     ER_FUNCTIONAL_INDEX_ON_JSON_OR_GEOMETRY_FUNCTION int = 3753
@@ -3214,7 +3193,6 @@ ER_NO int = 1002
     CR_INSECURE_API_ERR int = 2062
     CR_FILE_NAME_TOO_LONG int = 2063
     CR_SSL_FIPS_MODE_ERR int = 2064
-    CR_COMPRESSION_NOT_SUPPORTED int = 2065
     CR_DEPRECATED_COMPRESSION_NOT_SUPPORTED int = 2065
     CR_COMPRESSION_WRONGLY_CONFIGURED int = 2066
     CR_KERBEROS_USER_NOT_FOUND int = 2067
@@ -4090,13 +4068,6 @@ func IsServerErrorTooBigRowsize(err error) bool {
 // IsServerErrorStackOverrun check mysql error is "Thread stack overrun: Used: %ld of a %ld stack. Use 'mysqld --thread_stack=#' to specify a bigger stack if needed " 
 func IsServerErrorStackOverrun(err error) bool {
     result := Isa(err, ER_STACK_OVERRUN)
-    return result
-}
-
-    
-// IsServerErrorWrongOuterJoin check mysql error is "Cross dependency found in OUTER JOIN" 
-func IsServerErrorWrongOuterJoin(err error) bool {
-    result := Isa(err, ER_WRONG_OUTER_JOIN)
     return result
 }
 
@@ -8560,13 +8531,6 @@ func IsServerErrorReadOnlyMode(err error) bool {
 }
 
     
-// IsServerErrorGtidNextTypeUndefinedGroup check mysql error is "When @@SESSION.GTID_NEXT is set to a GTID, you must explicitly set it to a different value after a COMMIT or ROLLBACK. Please check GTID_NEXT variable manual page for detailed explanation. Current @@SESSION.GTID_NEXT is '%s'." 
-func IsServerErrorGtidNextTypeUndefinedGroup(err error) bool {
-    result := Isa(err, ER_GTID_NEXT_TYPE_UNDEFINED_GROUP)
-    return result
-}
-
-    
 // IsServerErrorGtidNextTypeUndefinedGtid check mysql error is "When @@SESSION.GTID_NEXT is set to a GTID, you must explicitly set it to a different value after a COMMIT or ROLLBACK. Please check GTID_NEXT variable manual page for detailed explanation. Current @@SESSION.GTID_NEXT is '%s'." 
 func IsServerErrorGtidNextTypeUndefinedGtid(err error) bool {
     result := Isa(err, ER_GTID_NEXT_TYPE_UNDEFINED_GTID)
@@ -8871,13 +8835,6 @@ func IsServerErrorAesInvalidIv(err error) bool {
 // IsServerErrorPluginCannotBeUninstalled check mysql error is "Plugin '%s' cannot be uninstalled now. %s " 
 func IsServerErrorPluginCannotBeUninstalled(err error) bool {
     result := Isa(err, ER_PLUGIN_CANNOT_BE_UNINSTALLED)
-    return result
-}
-
-    
-// IsServerErrorGtidUnsafeBinlogSplittableStatementAndGtidGroup check mysql error is "Cannot execute statement because it needs to be written to the binary log as multiple statements, and this is not allowed when @@SESSION.GTID_NEXT == 'UUID:NUMBER'." 
-func IsServerErrorGtidUnsafeBinlogSplittableStatementAndGtidGroup(err error) bool {
-    result := Isa(err, ER_GTID_UNSAFE_BINLOG_SPLITTABLE_STATEMENT_AND_GTID_GROUP)
     return result
 }
 
@@ -10933,13 +10890,6 @@ func IsServerErrorWindowRowsIntervalUse(err error) bool {
 }
 
     
-// IsServerErrorWindowNoGroupOrder check mysql error is "ASC or DESC with GROUP BY isn't allowed with window functions" 
-func IsServerErrorWindowNoGroupOrder(err error) bool {
-    result := Isa(err, ER_WINDOW_NO_GROUP_ORDER)
-    return result
-}
-
-    
 // IsServerErrorWindowNoGroupOrderUnused check mysql error is "ASC or DESC with GROUP BY isn't allowed with window functions" 
 func IsServerErrorWindowNoGroupOrderUnused(err error) bool {
     result := Isa(err, ER_WINDOW_NO_GROUP_ORDER_UNUSED)
@@ -10957,13 +10907,6 @@ func IsServerErrorWindowExplainJson(err error) bool {
 // IsServerErrorWindowFunctionIgnoresFrame check mysql error is "Window function '%s' ignores the frame clause of window '%s' and aggregates over the whole partition" 
 func IsServerErrorWindowFunctionIgnoresFrame(err error) bool {
     result := Isa(err, ER_WINDOW_FUNCTION_IGNORES_FRAME)
-    return result
-}
-
-    
-// IsServerErrorWindowSeNotAcceptable check mysql error is "Windowing requires @@internal_tmp_mem_storage_engine=TempTable." 
-func IsServerErrorWindowSeNotAcceptable(err error) bool {
-    result := Isa(err, ER_WINDOW_SE_NOT_ACCEPTABLE)
     return result
 }
 
@@ -11199,23 +11142,9 @@ func IsServerErrorPathInDatadir(err error) bool {
 }
 
     
-// IsServerErrorDdlInProgress check mysql error is "Concurrent DDL is performed during the operation. Please try again." 
-func IsServerErrorDdlInProgress(err error) bool {
-    result := Isa(err, ER_DDL_IN_PROGRESS)
-    return result
-}
-
-    
 // IsServerErrorCloneDdlInProgress check mysql error is "Concurrent DDL is performed during clone operation. Please try again." 
 func IsServerErrorCloneDdlInProgress(err error) bool {
     result := Isa(err, ER_CLONE_DDL_IN_PROGRESS)
-    return result
-}
-
-    
-// IsServerErrorTooManyConcurrentClones check mysql error is "Too many concurrent clone operations. Maximum allowed - %d." 
-func IsServerErrorTooManyConcurrentClones(err error) bool {
-    result := Isa(err, ER_TOO_MANY_CONCURRENT_CLONES)
     return result
 }
 
@@ -11570,13 +11499,6 @@ func IsServerErrorBinlogExpireLogDaysAndSecsUsedTogether(err error) bool {
 }
 
     
-// IsServerErrorRegexpStringNotTerminated check mysql error is "An output string could not be zero-terminated because the length exceeds the buffer capacity." 
-func IsServerErrorRegexpStringNotTerminated(err error) bool {
-    result := Isa(err, ER_REGEXP_STRING_NOT_TERMINATED)
-    return result
-}
-
-    
 // IsServerErrorRegexpBufferOverflow check mysql error is "The result string is larger than the result buffer." 
 func IsServerErrorRegexpBufferOverflow(err error) bool {
     result := Isa(err, ER_REGEXP_BUFFER_OVERFLOW)
@@ -11713,13 +11635,6 @@ func IsServerErrorEmptyPipelineForErrorLogService(err error) bool {
 // IsServerErrorComponentFilterDiagnostics check mysql error is "filter %s: %s" 
 func IsServerErrorComponentFilterDiagnostics(err error) bool {
     result := Isa(err, ER_COMPONENT_FILTER_DIAGNOSTICS)
-    return result
-}
-
-    
-// IsServerErrorInnodbCannotBeIgnored check mysql error is "ignore-builtin-innodb is ignored and will be removed in future releases." 
-func IsServerErrorInnodbCannotBeIgnored(err error) bool {
-    result := Isa(err, ER_INNODB_CANNOT_BE_IGNORED)
     return result
 }
 
@@ -12042,13 +11957,6 @@ func IsServerErrorClientGtidUnsafeCreateDropTempTableInTrxInSbr(err error) bool 
 // IsServerErrorTableWithoutPk check mysql error is "Unable to create or change a table without a primary key, when the system variable 'sql_require_primary_key' is set. Add a primary key to the table or unset this variable to avoid this message. Note that tables without a primary key can cause performance problems in row-based replication, so please consult your DBA before changing this setting." 
 func IsServerErrorTableWithoutPk(err error) bool {
     result := Isa(err, ER_TABLE_WITHOUT_PK)
-    return result
-}
-
-    
-// IsWarnDataTruncatedFunctionalIndex check mysql error is "Data truncated for functional index '%s' at row %ld" 
-func IsWarnDataTruncatedFunctionalIndex(err error) bool {
-    result := Isa(err, WARN_DATA_TRUNCATED_FUNCTIONAL_INDEX)
     return result
 }
 
@@ -14205,13 +14113,6 @@ func IsClientErrorFileNameTooLong(err error) bool {
 // IsClientErrorSslFipsModeErr check mysql error is "Set FIPS mode ON/STRICT failed" 
 func IsClientErrorSslFipsModeErr(err error) bool {
     result := Isa(err, CR_SSL_FIPS_MODE_ERR)
-    return result
-}
-
-    
-// IsClientErrorCompressionNotSupported check mysql error is "Compression protocol not supported with asynchronous protocol" 
-func IsClientErrorCompressionNotSupported(err error) bool {
-    result := Isa(err, CR_COMPRESSION_NOT_SUPPORTED)
     return result
 }
 

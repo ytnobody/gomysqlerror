@@ -355,7 +355,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     1346: definition.ErrorDefinition{ErrorNumber:1346, ErrorType:"ServerError", Symbol:"ER_FRM_UNKNOWN_TYPE", SQLState:"HY000", Message:"File '%s' has unknown type '%s' in its header ", Description:"", MySQLVersion:"5.7"},
     1347: definition.ErrorDefinition{ErrorNumber:1347, ErrorType:"ServerError", Symbol:"ER_WRONG_OBJECT", SQLState:"HY000", Message:"'%s.%s' is not %s", Description:"The named object is incorrect for the type of operation attempted on it. It must be an object of the named type. ", MySQLVersion:"5.7"},
     1348: definition.ErrorDefinition{ErrorNumber:1348, ErrorType:"ServerError", Symbol:"ER_NONUPDATEABLE_COLUMN", SQLState:"HY000", Message:"Column '%s' is not updatable ", Description:"", MySQLVersion:"5.7"},
-    1349: definition.ErrorDefinition{ErrorNumber:1349, ErrorType:"ServerError", Symbol:"ER_VIEW_SELECT_DERIVED", SQLState:"HY000", Message:"View's SELECT contains a subquery in the FROM clause", Description:"ER_VIEW_SELECT_DERIVED was removed after 5.7.6. ", MySQLVersion:"5.7"},
     1349: definition.ErrorDefinition{ErrorNumber:1349, ErrorType:"ServerError", Symbol:"ER_VIEW_SELECT_DERIVED_UNUSED", SQLState:"HY000", Message:"View's SELECT contains a subquery in the FROM clause", Description:"ER_VIEW_SELECT_DERIVED_UNUSED was added in 5.7.7. ", MySQLVersion:"5.7"},
     1350: definition.ErrorDefinition{ErrorNumber:1350, ErrorType:"ServerError", Symbol:"ER_VIEW_SELECT_CLAUSE", SQLState:"HY000", Message:"View's SELECT contains a '%s' clause ", Description:"", MySQLVersion:"5.7"},
     1351: definition.ErrorDefinition{ErrorNumber:1351, ErrorType:"ServerError", Symbol:"ER_VIEW_SELECT_VARIABLE", SQLState:"HY000", Message:"View's SELECT contains a variable or parameter ", Description:"", MySQLVersion:"5.7"},
@@ -618,7 +617,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     1608: definition.ErrorDefinition{ErrorNumber:1608, ErrorType:"ServerError", Symbol:"ER_NEVER_USED", SQLState:"HY000", Message:"Ambiguous slave modes combination. %s ", Description:"", MySQLVersion:"5.7"},
     1609: definition.ErrorDefinition{ErrorNumber:1609, ErrorType:"ServerError", Symbol:"ER_NO_FORMAT_DESCRIPTION_EVENT_BEFORE_BINLOG_STATEMENT", SQLState:"HY000", Message:"The BINLOG statement of type `%s` was not preceded by a format description BINLOG statement. ", Description:"", MySQLVersion:"5.7"},
     1610: definition.ErrorDefinition{ErrorNumber:1610, ErrorType:"ServerError", Symbol:"ER_SLAVE_CORRUPT_EVENT", SQLState:"HY000", Message:"Corrupted replication event was detected ", Description:"", MySQLVersion:"5.7"},
-    1611: definition.ErrorDefinition{ErrorNumber:1611, ErrorType:"ServerError", Symbol:"ER_LOAD_DATA_INVALID_COLUMN", SQLState:"HY000", Message:"Invalid column reference (%s) in LOAD DATA", Description:"ER_LOAD_DATA_INVALID_COLUMN was removed after 5.7.7. ", MySQLVersion:"5.7"},
     1611: definition.ErrorDefinition{ErrorNumber:1611, ErrorType:"ServerError", Symbol:"ER_LOAD_DATA_INVALID_COLUMN_UNUSED", SQLState:"HY000", Message:"Invalid column reference (%s) in LOAD DATA", Description:"ER_LOAD_DATA_INVALID_COLUMN_UNUSED was added in 5.7.8. ", MySQLVersion:"5.7"},
     1612: definition.ErrorDefinition{ErrorNumber:1612, ErrorType:"ServerError", Symbol:"ER_LOG_PURGE_NO_FILE", SQLState:"HY000", Message:"Being purged log %s was not found ", Description:"", MySQLVersion:"5.7"},
     1613: definition.ErrorDefinition{ErrorNumber:1613, ErrorType:"ServerError", Symbol:"ER_XA_RBTIMEOUT", SQLState:"XA106", Message:"XA_RBTIMEOUT: Transaction branch was rolled back: took too long ", Description:"", MySQLVersion:"5.7"},
@@ -627,7 +625,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     1616: definition.ErrorDefinition{ErrorNumber:1616, ErrorType:"ServerError", Symbol:"ER_DELAYED_NOT_SUPPORTED", SQLState:"HY000", Message:"DELAYED option not supported for table '%s' ", Description:"", MySQLVersion:"5.7"},
     1617: definition.ErrorDefinition{ErrorNumber:1617, ErrorType:"ServerError", Symbol:"WARN_NO_MASTER_INFO", SQLState:"HY000", Message:"The master info structure does not exist ", Description:"", MySQLVersion:"5.7"},
     1618: definition.ErrorDefinition{ErrorNumber:1618, ErrorType:"ServerError", Symbol:"WARN_OPTION_IGNORED", SQLState:"HY000", Message:"<%s> option ignored ", Description:"", MySQLVersion:"5.7"},
-    1619: definition.ErrorDefinition{ErrorNumber:1619, ErrorType:"ServerError", Symbol:"WARN_PLUGIN_DELETE_BUILTIN", SQLState:"HY000", Message:"Built-in plugins cannot be deleted", Description:"WARN_PLUGIN_DELETE_BUILTIN was removed after 5.7.4. ", MySQLVersion:"5.7"},
     1619: definition.ErrorDefinition{ErrorNumber:1619, ErrorType:"ServerError", Symbol:"ER_PLUGIN_DELETE_BUILTIN", SQLState:"HY000", Message:"Built-in plugins cannot be deleted", Description:"ER_PLUGIN_DELETE_BUILTIN was added in 5.7.5. ", MySQLVersion:"5.7"},
     1620: definition.ErrorDefinition{ErrorNumber:1620, ErrorType:"ServerError", Symbol:"WARN_PLUGIN_BUSY", SQLState:"HY000", Message:"Plugin is busy and will be uninstalled on shutdown ", Description:"", MySQLVersion:"5.7"},
     1621: definition.ErrorDefinition{ErrorNumber:1621, ErrorType:"ServerError", Symbol:"ER_VARIABLE_IS_READONLY", SQLState:"HY000", Message:"%s variable '%s' is read-only. Use SET %s to assign the value ", Description:"", MySQLVersion:"5.7"},
@@ -777,7 +774,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     1765: definition.ErrorDefinition{ErrorNumber:1765, ErrorType:"ServerError", Symbol:"ER_VARIABLE_NOT_SETTABLE_IN_SF_OR_TRIGGER", SQLState:"HY000", Message:"The system variable %s cannot be set in stored functions or triggers. ", Description:"", MySQLVersion:"5.7"},
     1766: definition.ErrorDefinition{ErrorNumber:1766, ErrorType:"ServerError", Symbol:"ER_VARIABLE_NOT_SETTABLE_IN_TRANSACTION", SQLState:"HY000", Message:"The system variable %s cannot be set when there is an ongoing transaction. ", Description:"", MySQLVersion:"5.7"},
     1767: definition.ErrorDefinition{ErrorNumber:1767, ErrorType:"ServerError", Symbol:"ER_GTID_NEXT_IS_NOT_IN_GTID_NEXT_LIST", SQLState:"HY000", Message:"The system variable @@SESSION.GTID_NEXT has the value %s, which is not listed in @@SESSION.GTID_NEXT_LIST. ", Description:"", MySQLVersion:"5.7"},
-    1768: definition.ErrorDefinition{ErrorNumber:1768, ErrorType:"ServerError", Symbol:"ER_CANT_CHANGE_GTID_NEXT_IN_TRANSACTION_WHEN_GTID_NEXT_LIST_IS_NULL", SQLState:"HY000", Message:"The system variable @@SESSION.GTID_NEXT cannot change inside a transaction.", Description:"ER_CANT_CHANGE_GTID_NEXT_IN_TRANSACTION_WHEN_GTID_NEXT_LIST_IS_NULL was removed after 5.7.5. ", MySQLVersion:"5.7"},
     1768: definition.ErrorDefinition{ErrorNumber:1768, ErrorType:"ServerError", Symbol:"ER_CANT_CHANGE_GTID_NEXT_IN_TRANSACTION", SQLState:"HY000", Message:"The system variable @@SESSION.GTID_NEXT cannot change inside a transaction.", Description:"ER_CANT_CHANGE_GTID_NEXT_IN_TRANSACTION was added in 5.7.6. ", MySQLVersion:"5.7"},
     1769: definition.ErrorDefinition{ErrorNumber:1769, ErrorType:"ServerError", Symbol:"ER_SET_STATEMENT_CANNOT_INVOKE_FUNCTION", SQLState:"HY000", Message:"The statement 'SET %s' cannot invoke a stored function. ", Description:"", MySQLVersion:"5.7"},
     1770: definition.ErrorDefinition{ErrorNumber:1770, ErrorType:"ServerError", Symbol:"ER_GTID_NEXT_CANT_BE_AUTOMATIC_IF_GTID_NEXT_LIST_IS_NON_NULL", SQLState:"HY000", Message:"The system variable @@SESSION.GTID_NEXT cannot be 'AUTOMATIC' when @@SESSION.GTID_NEXT_LIST is non-NULL. ", Description:"", MySQLVersion:"5.7"},
@@ -787,16 +783,13 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     1774: definition.ErrorDefinition{ErrorNumber:1774, ErrorType:"ServerError", Symbol:"ER_MALFORMED_GTID_SPECIFICATION", SQLState:"HY000", Message:"Malformed GTID specification '%s'. ", Description:"", MySQLVersion:"5.7"},
     1775: definition.ErrorDefinition{ErrorNumber:1775, ErrorType:"ServerError", Symbol:"ER_GNO_EXHAUSTED", SQLState:"HY000", Message:"Impossible to generate Global Transaction Identifier: the integer component reached the maximal value. Restart the server with a new server_uuid. ", Description:"", MySQLVersion:"5.7"},
     1776: definition.ErrorDefinition{ErrorNumber:1776, ErrorType:"ServerError", Symbol:"ER_BAD_SLAVE_AUTO_POSITION", SQLState:"HY000", Message:"Parameters MASTER_LOG_FILE, MASTER_LOG_POS, RELAY_LOG_FILE and RELAY_LOG_POS cannot be set when MASTER_AUTO_POSITION is active. ", Description:"", MySQLVersion:"5.7"},
-    1777: definition.ErrorDefinition{ErrorNumber:1777, ErrorType:"ServerError", Symbol:"ER_AUTO_POSITION_REQUIRES_GTID_MODE_ON", SQLState:"HY000", Message:"CHANGE MASTER TO MASTER_AUTO_POSITION = 1 can only be executed when @@GLOBAL.GTID_MODE = ON.", Description:"ER_AUTO_POSITION_REQUIRES_GTID_MODE_ON was removed after 5.7.5. ", MySQLVersion:"5.7"},
     1777: definition.ErrorDefinition{ErrorNumber:1777, ErrorType:"ServerError", Symbol:"ER_AUTO_POSITION_REQUIRES_GTID_MODE_NOT_OFF", SQLState:"HY000", Message:"CHANGE MASTER TO MASTER_AUTO_POSITION = 1 cannot be executed because @@GLOBAL.GTID_MODE = OFF.", Description:"ER_AUTO_POSITION_REQUIRES_GTID_MODE_NOT_OFF was added in 5.7.6. ", MySQLVersion:"5.7"},
     1778: definition.ErrorDefinition{ErrorNumber:1778, ErrorType:"ServerError", Symbol:"ER_CANT_DO_IMPLICIT_COMMIT_IN_TRX_WHEN_GTID_NEXT_IS_SET", SQLState:"HY000", Message:"Cannot execute statements with implicit commit inside a transaction when @@SESSION.GTID_NEXT == 'UUID:NUMBER'. ", Description:"", MySQLVersion:"5.7"},
-    1779: definition.ErrorDefinition{ErrorNumber:1779, ErrorType:"ServerError", Symbol:"ER_GTID_MODE_2_OR_3_REQUIRES_ENFORCE_GTID_CONSISTENCY_ON", SQLState:"HY000", Message:"@@GLOBAL.GTID_MODE = ON or UPGRADE_STEP_2 requires @@GLOBAL.ENFORCE_GTID_CONSISTENCY = 1.", Description:"ER_GTID_MODE_2_OR_3_REQUIRES_ENFORCE_GTID_CONSISTENCY_ON was removed after 5.7.5. ", MySQLVersion:"5.7"},
     1779: definition.ErrorDefinition{ErrorNumber:1779, ErrorType:"ServerError", Symbol:"ER_GTID_MODE_ON_REQUIRES_ENFORCE_GTID_CONSISTENCY_ON", SQLState:"HY000", Message:"GTID_MODE = ON requires ENFORCE_GTID_CONSISTENCY = ON.", Description:"ER_GTID_MODE_ON_REQUIRES_ENFORCE_GTID_CONSISTENCY_ON was added in 5.7.6. ", MySQLVersion:"5.7"},
     1780: definition.ErrorDefinition{ErrorNumber:1780, ErrorType:"ServerError", Symbol:"ER_GTID_MODE_REQUIRES_BINLOG", SQLState:"HY000", Message:"@@GLOBAL.GTID_MODE = ON or ON_PERMISSIVE or OFF_PERMISSIVE requires --log-bin and --log-slave-updates. ", Description:"", MySQLVersion:"5.7"},
     1781: definition.ErrorDefinition{ErrorNumber:1781, ErrorType:"ServerError", Symbol:"ER_CANT_SET_GTID_NEXT_TO_GTID_WHEN_GTID_MODE_IS_OFF", SQLState:"HY000", Message:"@@SESSION.GTID_NEXT cannot be set to UUID:NUMBER when @@GLOBAL.GTID_MODE = OFF. ", Description:"", MySQLVersion:"5.7"},
     1782: definition.ErrorDefinition{ErrorNumber:1782, ErrorType:"ServerError", Symbol:"ER_CANT_SET_GTID_NEXT_TO_ANONYMOUS_WHEN_GTID_MODE_IS_ON", SQLState:"HY000", Message:"@@SESSION.GTID_NEXT cannot be set to ANONYMOUS when @@GLOBAL.GTID_MODE = ON. ", Description:"", MySQLVersion:"5.7"},
     1783: definition.ErrorDefinition{ErrorNumber:1783, ErrorType:"ServerError", Symbol:"ER_CANT_SET_GTID_NEXT_LIST_TO_NON_NULL_WHEN_GTID_MODE_IS_OFF", SQLState:"HY000", Message:"@@SESSION.GTID_NEXT_LIST cannot be set to a non-NULL value when @@GLOBAL.GTID_MODE = OFF. ", Description:"", MySQLVersion:"5.7"},
-    1784: definition.ErrorDefinition{ErrorNumber:1784, ErrorType:"ServerError", Symbol:"ER_FOUND_GTID_EVENT_WHEN_GTID_MODE_IS_OFF", SQLState:"HY000", Message:"Found a Gtid_log_event or Previous_gtids_log_event when @@GLOBAL.GTID_MODE = OFF.", Description:"ER_FOUND_GTID_EVENT_WHEN_GTID_MODE_IS_OFF was removed after 5.7.5. ", MySQLVersion:"5.7"},
     1784: definition.ErrorDefinition{ErrorNumber:1784, ErrorType:"ServerError", Symbol:"ER_FOUND_GTID_EVENT_WHEN_GTID_MODE_IS_OFF__UNUSED", SQLState:"HY000", Message:"Found a Gtid_log_event when @@GLOBAL.GTID_MODE = OFF.", Description:"ER_FOUND_GTID_EVENT_WHEN_GTID_MODE_IS_OFF__UNUSED was added in 5.7.6. ", MySQLVersion:"5.7"},
     1785: definition.ErrorDefinition{ErrorNumber:1785, ErrorType:"ServerError", Symbol:"ER_GTID_UNSAFE_NON_TRANSACTIONAL_TABLE", SQLState:"HY000", Message:"Statement violates GTID consistency: Updates to non-transactional tables can only be done in either autocommitted statements or single-statement transactions, and never in the same statement as updates to transactional tables. ", Description:"", MySQLVersion:"5.7"},
     1786: definition.ErrorDefinition{ErrorNumber:1786, ErrorType:"ServerError", Symbol:"ER_GTID_UNSAFE_CREATE_SELECT", SQLState:"HY000", Message:"Statement violates GTID consistency: CREATE TABLE ... SELECT. ", Description:"", MySQLVersion:"5.7"},
@@ -847,7 +840,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     1831: definition.ErrorDefinition{ErrorNumber:1831, ErrorType:"ServerError", Symbol:"ER_DUP_INDEX", SQLState:"HY000", Message:"Duplicate index '%s' defined on the table '%s.%s'. This is deprecated and will be disallowed in a future release. ", Description:"", MySQLVersion:"5.7"},
     1832: definition.ErrorDefinition{ErrorNumber:1832, ErrorType:"ServerError", Symbol:"ER_FK_COLUMN_CANNOT_CHANGE", SQLState:"HY000", Message:"Cannot change column '%s': used in a foreign key constraint '%s' ", Description:"", MySQLVersion:"5.7"},
     1833: definition.ErrorDefinition{ErrorNumber:1833, ErrorType:"ServerError", Symbol:"ER_FK_COLUMN_CANNOT_CHANGE_CHILD", SQLState:"HY000", Message:"Cannot change column '%s': used in a foreign key constraint '%s' of table '%s' ", Description:"", MySQLVersion:"5.7"},
-    1834: definition.ErrorDefinition{ErrorNumber:1834, ErrorType:"ServerError", Symbol:"ER_FK_CANNOT_DELETE_PARENT", SQLState:"HY000", Message:"Cannot delete rows from table which is parent in a foreign key constraint '%s' of table '%s'", Description:"ER_FK_CANNOT_DELETE_PARENT was removed after 5.7.3. ", MySQLVersion:"5.7"},
     1834: definition.ErrorDefinition{ErrorNumber:1834, ErrorType:"ServerError", Symbol:"ER_UNUSED5", SQLState:"HY000", Message:"Cannot delete rows from table which is parent in a foreign key constraint '%s' of table '%s'", Description:"ER_UNUSED5 was added in 5.7.4. ", MySQLVersion:"5.7"},
     1835: definition.ErrorDefinition{ErrorNumber:1835, ErrorType:"ServerError", Symbol:"ER_MALFORMED_PACKET", SQLState:"HY000", Message:"Malformed communication packet. ", Description:"", MySQLVersion:"5.7"},
     1836: definition.ErrorDefinition{ErrorNumber:1836, ErrorType:"ServerError", Symbol:"ER_READ_ONLY_MODE", SQLState:"HY000", Message:"Running in read-only mode ", Description:"", MySQLVersion:"5.7"},
@@ -866,7 +858,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     1849: definition.ErrorDefinition{ErrorNumber:1849, ErrorType:"ServerError", Symbol:"ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_FK_RENAME", SQLState:"HY000", Message:"Columns participating in a foreign key are renamed", Description:"ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_FK_RENAME was added in 5.7.1. ", MySQLVersion:"5.7"},
     1850: definition.ErrorDefinition{ErrorNumber:1850, ErrorType:"ServerError", Symbol:"ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_COLUMN_TYPE", SQLState:"HY000", Message:"Cannot change column type INPLACE", Description:"ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_COLUMN_TYPE was added in 5.7.1. ", MySQLVersion:"5.7"},
     1851: definition.ErrorDefinition{ErrorNumber:1851, ErrorType:"ServerError", Symbol:"ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_FK_CHECK", SQLState:"HY000", Message:"Adding foreign keys needs foreign_key_checks=OFF", Description:"ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_FK_CHECK was added in 5.7.1. ", MySQLVersion:"5.7"},
-    1852: definition.ErrorDefinition{ErrorNumber:1852, ErrorType:"ServerError", Symbol:"ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_IGNORE", SQLState:"HY000", Message:"Creating unique indexes with IGNORE requires COPY algorithm to remove duplicate rows", Description:"ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_IGNORE was added in 5.7.1, removed after 5.7.3. ", MySQLVersion:"5.7"},
     1852: definition.ErrorDefinition{ErrorNumber:1852, ErrorType:"ServerError", Symbol:"ER_UNUSED6", SQLState:"HY000", Message:"Creating unique indexes with IGNORE requires COPY algorithm to remove duplicate rows", Description:"ER_UNUSED6 was added in 5.7.4. ", MySQLVersion:"5.7"},
     1853: definition.ErrorDefinition{ErrorNumber:1853, ErrorType:"ServerError", Symbol:"ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_NOPK", SQLState:"HY000", Message:"Dropping a primary key is not allowed without also adding a new primary key", Description:"ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_NOPK was added in 5.7.1. ", MySQLVersion:"5.7"},
     1854: definition.ErrorDefinition{ErrorNumber:1854, ErrorType:"ServerError", Symbol:"ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_AUTOINC", SQLState:"HY000", Message:"Adding an auto-increment column requires a lock", Description:"ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_AUTOINC was added in 5.7.1. ", MySQLVersion:"5.7"},
@@ -1008,7 +999,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     3100: definition.ErrorDefinition{ErrorNumber:3100, ErrorType:"ServerError", Symbol:"ER_RUN_HOOK_ERROR", SQLState:"HY000", Message:"Error on observer while running replication hook '%s'.", Description:"ER_RUN_HOOK_ERROR was added in 5.7.6. ", MySQLVersion:"5.7"},
     3101: definition.ErrorDefinition{ErrorNumber:3101, ErrorType:"ServerError", Symbol:"ER_TRANSACTION_ROLLBACK_DURING_COMMIT", SQLState:"HY000", Message:"Plugin instructed the server to rollback the current transaction.", Description:"ER_TRANSACTION_ROLLBACK_DURING_COMMIT was added in 5.7.6. ", MySQLVersion:"5.7"},
     3102: definition.ErrorDefinition{ErrorNumber:3102, ErrorType:"ServerError", Symbol:"ER_GENERATED_COLUMN_FUNCTION_IS_NOT_ALLOWED", SQLState:"HY000", Message:"Expression of generated column '%s' contains a disallowed function.", Description:"ER_GENERATED_COLUMN_FUNCTION_IS_NOT_ALLOWED was added in 5.7.6. ", MySQLVersion:"5.7"},
-    3103: definition.ErrorDefinition{ErrorNumber:3103, ErrorType:"ServerError", Symbol:"ER_KEY_BASED_ON_GENERATED_COLUMN", SQLState:"HY000", Message:"Key/Index cannot be defined on a virtual generated column.", Description:"ER_KEY_BASED_ON_GENERATED_COLUMN was added in 5.7.6, removed after 5.7.7. ", MySQLVersion:"5.7"},
     3103: definition.ErrorDefinition{ErrorNumber:3103, ErrorType:"ServerError", Symbol:"ER_UNSUPPORTED_ALTER_INPLACE_ON_VIRTUAL_COLUMN", SQLState:"HY000", Message:"INPLACE ADD or DROP of virtual columns cannot be combined with other ALTER TABLE actions", Description:"ER_UNSUPPORTED_ALTER_INPLACE_ON_VIRTUAL_COLUMN was added in 5.7.8. ", MySQLVersion:"5.7"},
     3104: definition.ErrorDefinition{ErrorNumber:3104, ErrorType:"ServerError", Symbol:"ER_WRONG_FK_OPTION_FOR_GENERATED_COLUMN", SQLState:"HY000", Message:"Cannot define foreign key with %s clause on a generated column.", Description:"ER_WRONG_FK_OPTION_FOR_GENERATED_COLUMN was added in 5.7.6. ", MySQLVersion:"5.7"},
     3105: definition.ErrorDefinition{ErrorNumber:3105, ErrorType:"ServerError", Symbol:"ER_NON_DEFAULT_VALUE_FOR_GENERATED_COLUMN", SQLState:"HY000", Message:"The value specified for generated column '%s' in table '%s' is not allowed.", Description:"ER_NON_DEFAULT_VALUE_FOR_GENERATED_COLUMN was added in 5.7.6. ", MySQLVersion:"5.7"},
@@ -1035,7 +1025,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     3126: definition.ErrorDefinition{ErrorNumber:3126, ErrorType:"ServerError", Symbol:"ER_WARN_CONFLICTING_HINT", SQLState:"HY000", Message:"Hint %s is ignored as conflicting/duplicated", Description:"ER_WARN_CONFLICTING_HINT was added in 5.7.7. ", MySQLVersion:"5.7"},
     3127: definition.ErrorDefinition{ErrorNumber:3127, ErrorType:"ServerError", Symbol:"ER_WARN_UNKNOWN_QB_NAME", SQLState:"HY000", Message:"Query block name %s is not found for %s hint", Description:"ER_WARN_UNKNOWN_QB_NAME was added in 5.7.7. ", MySQLVersion:"5.7"},
     3128: definition.ErrorDefinition{ErrorNumber:3128, ErrorType:"ServerError", Symbol:"ER_UNRESOLVED_HINT_NAME", SQLState:"HY000", Message:"Unresolved name %s for %s hint", Description:"ER_UNRESOLVED_HINT_NAME was added in 5.7.7. ", MySQLVersion:"5.7"},
-    3129: definition.ErrorDefinition{ErrorNumber:3129, ErrorType:"ServerError", Symbol:"ER_WARN_DEPRECATED_SQLMODE_UNSET", SQLState:"HY000", Message:"Unsetting sql mode '%s' is deprecated. It will be made read-only in a future release.", Description:"ER_WARN_DEPRECATED_SQLMODE_UNSET was added in 5.7.7, removed after 5.7.7. ", MySQLVersion:"5.7"},
     3129: definition.ErrorDefinition{ErrorNumber:3129, ErrorType:"ServerError", Symbol:"ER_WARN_ON_MODIFYING_GTID_EXECUTED_TABLE", SQLState:"HY000", Message:"Please do not modify the %s table. This is a mysql internal system table to store GTIDs for committed transactions. Modifying it can lead to an inconsistent GTID state.", Description:"ER_WARN_ON_MODIFYING_GTID_EXECUTED_TABLE was added in 5.7.8. ", MySQLVersion:"5.7"},
     3130: definition.ErrorDefinition{ErrorNumber:3130, ErrorType:"ServerError", Symbol:"ER_PLUGGABLE_PROTOCOL_COMMAND_NOT_SUPPORTED", SQLState:"HY000", Message:"Command not supported by pluggable protocols", Description:"ER_PLUGGABLE_PROTOCOL_COMMAND_NOT_SUPPORTED was added in 5.7.8. ", MySQLVersion:"5.7"},
     3131: definition.ErrorDefinition{ErrorNumber:3131, ErrorType:"ServerError", Symbol:"ER_LOCKING_SERVICE_WRONG_NAME", SQLState:"42000", Message:"Incorrect locking service lock name '%s'.", Description:"ER_LOCKING_SERVICE_WRONG_NAME was added in 5.7.8. ", MySQLVersion:"5.7"},
@@ -1187,7 +1176,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     2046: definition.ErrorDefinition{ErrorNumber:2046, ErrorType:"ClientError", Symbol:"CR_SHARED_MEMORY_CONNECT_SET_ERROR", SQLState:"", Message:"Can't open shared memory", Description:"cannot send request event to server (%lu) ", MySQLVersion:"5.7"},
     2047: definition.ErrorDefinition{ErrorNumber:2047, ErrorType:"ClientError", Symbol:"CR_CONN_UNKNOW_PROTOCOL", SQLState:"", Message:"Wrong or unknown protocol ", Description:"", MySQLVersion:"5.7"},
     2048: definition.ErrorDefinition{ErrorNumber:2048, ErrorType:"ClientError", Symbol:"CR_INVALID_CONN_HANDLE", SQLState:"", Message:"Invalid connection handle ", Description:"", MySQLVersion:"5.7"},
-    2049: definition.ErrorDefinition{ErrorNumber:2049, ErrorType:"ClientError", Symbol:"CR_SECURE_AUTH", SQLState:"", Message:"Connection using old (pre-4.1.1) authentication protocol refused (client option 'secure_auth' enabled)", Description:"CR_SECURE_AUTH was removed after 5.7.4. ", MySQLVersion:"5.7"},
     2049: definition.ErrorDefinition{ErrorNumber:2049, ErrorType:"ClientError", Symbol:"CR_UNUSED_1", SQLState:"", Message:"Connection using old (pre-4.1.1) authentication protocol refused (client option 'secure_auth' enabled)", Description:"CR_UNUSED_1 was added in 5.7.5. ", MySQLVersion:"5.7"},
     2050: definition.ErrorDefinition{ErrorNumber:2050, ErrorType:"ClientError", Symbol:"CR_FETCH_CANCELED", SQLState:"", Message:"Row retrieval was canceled by mysql_stmt_close() call ", Description:"", MySQLVersion:"5.7"},
     2051: definition.ErrorDefinition{ErrorNumber:2051, ErrorType:"ClientError", Symbol:"CR_NO_DATA", SQLState:"", Message:"Attempt to read column without prior row fetch ", Description:"", MySQLVersion:"5.7"},
@@ -1587,7 +1575,6 @@ ER_HASHCHK int = 1000
     ER_FRM_UNKNOWN_TYPE int = 1346
     ER_WRONG_OBJECT int = 1347
     ER_NONUPDATEABLE_COLUMN int = 1348
-    ER_VIEW_SELECT_DERIVED int = 1349
     ER_VIEW_SELECT_DERIVED_UNUSED int = 1349
     ER_VIEW_SELECT_CLAUSE int = 1350
     ER_VIEW_SELECT_VARIABLE int = 1351
@@ -1850,7 +1837,6 @@ ER_HASHCHK int = 1000
     ER_NEVER_USED int = 1608
     ER_NO_FORMAT_DESCRIPTION_EVENT_BEFORE_BINLOG_STATEMENT int = 1609
     ER_SLAVE_CORRUPT_EVENT int = 1610
-    ER_LOAD_DATA_INVALID_COLUMN int = 1611
     ER_LOAD_DATA_INVALID_COLUMN_UNUSED int = 1611
     ER_LOG_PURGE_NO_FILE int = 1612
     ER_XA_RBTIMEOUT int = 1613
@@ -1859,7 +1845,6 @@ ER_HASHCHK int = 1000
     ER_DELAYED_NOT_SUPPORTED int = 1616
     WARN_NO_MASTER_INFO int = 1617
     WARN_OPTION_IGNORED int = 1618
-    WARN_PLUGIN_DELETE_BUILTIN int = 1619
     ER_PLUGIN_DELETE_BUILTIN int = 1619
     WARN_PLUGIN_BUSY int = 1620
     ER_VARIABLE_IS_READONLY int = 1621
@@ -2009,7 +1994,6 @@ ER_HASHCHK int = 1000
     ER_VARIABLE_NOT_SETTABLE_IN_SF_OR_TRIGGER int = 1765
     ER_VARIABLE_NOT_SETTABLE_IN_TRANSACTION int = 1766
     ER_GTID_NEXT_IS_NOT_IN_GTID_NEXT_LIST int = 1767
-    ER_CANT_CHANGE_GTID_NEXT_IN_TRANSACTION_WHEN_GTID_NEXT_LIST_IS_NULL int = 1768
     ER_CANT_CHANGE_GTID_NEXT_IN_TRANSACTION int = 1768
     ER_SET_STATEMENT_CANNOT_INVOKE_FUNCTION int = 1769
     ER_GTID_NEXT_CANT_BE_AUTOMATIC_IF_GTID_NEXT_LIST_IS_NON_NULL int = 1770
@@ -2019,16 +2003,13 @@ ER_HASHCHK int = 1000
     ER_MALFORMED_GTID_SPECIFICATION int = 1774
     ER_GNO_EXHAUSTED int = 1775
     ER_BAD_SLAVE_AUTO_POSITION int = 1776
-    ER_AUTO_POSITION_REQUIRES_GTID_MODE_ON int = 1777
     ER_AUTO_POSITION_REQUIRES_GTID_MODE_NOT_OFF int = 1777
     ER_CANT_DO_IMPLICIT_COMMIT_IN_TRX_WHEN_GTID_NEXT_IS_SET int = 1778
-    ER_GTID_MODE_2_OR_3_REQUIRES_ENFORCE_GTID_CONSISTENCY_ON int = 1779
     ER_GTID_MODE_ON_REQUIRES_ENFORCE_GTID_CONSISTENCY_ON int = 1779
     ER_GTID_MODE_REQUIRES_BINLOG int = 1780
     ER_CANT_SET_GTID_NEXT_TO_GTID_WHEN_GTID_MODE_IS_OFF int = 1781
     ER_CANT_SET_GTID_NEXT_TO_ANONYMOUS_WHEN_GTID_MODE_IS_ON int = 1782
     ER_CANT_SET_GTID_NEXT_LIST_TO_NON_NULL_WHEN_GTID_MODE_IS_OFF int = 1783
-    ER_FOUND_GTID_EVENT_WHEN_GTID_MODE_IS_OFF int = 1784
     ER_FOUND_GTID_EVENT_WHEN_GTID_MODE_IS_OFF__UNUSED int = 1784
     ER_GTID_UNSAFE_NON_TRANSACTIONAL_TABLE int = 1785
     ER_GTID_UNSAFE_CREATE_SELECT int = 1786
@@ -2079,7 +2060,6 @@ ER_HASHCHK int = 1000
     ER_DUP_INDEX int = 1831
     ER_FK_COLUMN_CANNOT_CHANGE int = 1832
     ER_FK_COLUMN_CANNOT_CHANGE_CHILD int = 1833
-    ER_FK_CANNOT_DELETE_PARENT int = 1834
     ER_UNUSED5 int = 1834
     ER_MALFORMED_PACKET int = 1835
     ER_READ_ONLY_MODE int = 1836
@@ -2098,7 +2078,6 @@ ER_HASHCHK int = 1000
     ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_FK_RENAME int = 1849
     ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_COLUMN_TYPE int = 1850
     ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_FK_CHECK int = 1851
-    ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_IGNORE int = 1852
     ER_UNUSED6 int = 1852
     ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_NOPK int = 1853
     ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_AUTOINC int = 1854
@@ -2240,7 +2219,6 @@ ER_HASHCHK int = 1000
     ER_RUN_HOOK_ERROR int = 3100
     ER_TRANSACTION_ROLLBACK_DURING_COMMIT int = 3101
     ER_GENERATED_COLUMN_FUNCTION_IS_NOT_ALLOWED int = 3102
-    ER_KEY_BASED_ON_GENERATED_COLUMN int = 3103
     ER_UNSUPPORTED_ALTER_INPLACE_ON_VIRTUAL_COLUMN int = 3103
     ER_WRONG_FK_OPTION_FOR_GENERATED_COLUMN int = 3104
     ER_NON_DEFAULT_VALUE_FOR_GENERATED_COLUMN int = 3105
@@ -2267,7 +2245,6 @@ ER_HASHCHK int = 1000
     ER_WARN_CONFLICTING_HINT int = 3126
     ER_WARN_UNKNOWN_QB_NAME int = 3127
     ER_UNRESOLVED_HINT_NAME int = 3128
-    ER_WARN_DEPRECATED_SQLMODE_UNSET int = 3129
     ER_WARN_ON_MODIFYING_GTID_EXECUTED_TABLE int = 3129
     ER_PLUGGABLE_PROTOCOL_COMMAND_NOT_SUPPORTED int = 3130
     ER_LOCKING_SERVICE_WRONG_NAME int = 3131
@@ -2419,7 +2396,6 @@ ER_HASHCHK int = 1000
     CR_SHARED_MEMORY_CONNECT_SET_ERROR int = 2046
     CR_CONN_UNKNOW_PROTOCOL int = 2047
     CR_INVALID_CONN_HANDLE int = 2048
-    CR_SECURE_AUTH int = 2049
     CR_UNUSED_1 int = 2049
     CR_FETCH_CANCELED int = 2050
     CR_NO_DATA int = 2051
@@ -4930,13 +4906,6 @@ func IsServerErrorNonupdateableColumn(err error) bool {
 }
 
     
-// IsServerErrorViewSelectDerived check mysql error is "View's SELECT contains a subquery in the FROM clause" 
-func IsServerErrorViewSelectDerived(err error) bool {
-    result := Isa(err, ER_VIEW_SELECT_DERIVED)
-    return result
-}
-
-    
 // IsServerErrorViewSelectDerivedUnused check mysql error is "View's SELECT contains a subquery in the FROM clause" 
 func IsServerErrorViewSelectDerivedUnused(err error) bool {
     result := Isa(err, ER_VIEW_SELECT_DERIVED_UNUSED)
@@ -6771,13 +6740,6 @@ func IsServerErrorSlaveCorruptEvent(err error) bool {
 }
 
     
-// IsServerErrorLoadDataInvalidColumn check mysql error is "Invalid column reference (%s) in LOAD DATA" 
-func IsServerErrorLoadDataInvalidColumn(err error) bool {
-    result := Isa(err, ER_LOAD_DATA_INVALID_COLUMN)
-    return result
-}
-
-    
 // IsServerErrorLoadDataInvalidColumnUnused check mysql error is "Invalid column reference (%s) in LOAD DATA" 
 func IsServerErrorLoadDataInvalidColumnUnused(err error) bool {
     result := Isa(err, ER_LOAD_DATA_INVALID_COLUMN_UNUSED)
@@ -6830,13 +6792,6 @@ func IsWarnNoMasterInfo(err error) bool {
 // IsWarnOptionIgnored check mysql error is "<%s> option ignored " 
 func IsWarnOptionIgnored(err error) bool {
     result := Isa(err, WARN_OPTION_IGNORED)
-    return result
-}
-
-    
-// IsWarnPluginDeleteBuiltin check mysql error is "Built-in plugins cannot be deleted" 
-func IsWarnPluginDeleteBuiltin(err error) bool {
-    result := Isa(err, WARN_PLUGIN_DELETE_BUILTIN)
     return result
 }
 
@@ -7884,13 +7839,6 @@ func IsServerErrorGtidNextIsNotInGtidNextList(err error) bool {
 }
 
     
-// IsServerErrorCantChangeGtidNextInTransactionWhenGtidNextListIsNull check mysql error is "The system variable @@SESSION.GTID_NEXT cannot change inside a transaction." 
-func IsServerErrorCantChangeGtidNextInTransactionWhenGtidNextListIsNull(err error) bool {
-    result := Isa(err, ER_CANT_CHANGE_GTID_NEXT_IN_TRANSACTION_WHEN_GTID_NEXT_LIST_IS_NULL)
-    return result
-}
-
-    
 // IsServerErrorCantChangeGtidNextInTransaction check mysql error is "The system variable @@SESSION.GTID_NEXT cannot change inside a transaction." 
 func IsServerErrorCantChangeGtidNextInTransaction(err error) bool {
     result := Isa(err, ER_CANT_CHANGE_GTID_NEXT_IN_TRANSACTION)
@@ -7954,13 +7902,6 @@ func IsServerErrorBadSlaveAutoPosition(err error) bool {
 }
 
     
-// IsServerErrorAutoPositionRequiresGtidModeOn check mysql error is "CHANGE MASTER TO MASTER_AUTO_POSITION = 1 can only be executed when @@GLOBAL.GTID_MODE = ON." 
-func IsServerErrorAutoPositionRequiresGtidModeOn(err error) bool {
-    result := Isa(err, ER_AUTO_POSITION_REQUIRES_GTID_MODE_ON)
-    return result
-}
-
-    
 // IsServerErrorAutoPositionRequiresGtidModeNotOff check mysql error is "CHANGE MASTER TO MASTER_AUTO_POSITION = 1 cannot be executed because @@GLOBAL.GTID_MODE = OFF." 
 func IsServerErrorAutoPositionRequiresGtidModeNotOff(err error) bool {
     result := Isa(err, ER_AUTO_POSITION_REQUIRES_GTID_MODE_NOT_OFF)
@@ -7971,13 +7912,6 @@ func IsServerErrorAutoPositionRequiresGtidModeNotOff(err error) bool {
 // IsServerErrorCantDoImplicitCommitInTrxWhenGtidNextIsSet check mysql error is "Cannot execute statements with implicit commit inside a transaction when @@SESSION.GTID_NEXT == 'UUID:NUMBER'. " 
 func IsServerErrorCantDoImplicitCommitInTrxWhenGtidNextIsSet(err error) bool {
     result := Isa(err, ER_CANT_DO_IMPLICIT_COMMIT_IN_TRX_WHEN_GTID_NEXT_IS_SET)
-    return result
-}
-
-    
-// IsServerErrorGtidMode2Or3RequiresEnforceGtidConsistencyOn check mysql error is "@@GLOBAL.GTID_MODE = ON or UPGRADE_STEP_2 requires @@GLOBAL.ENFORCE_GTID_CONSISTENCY = 1." 
-func IsServerErrorGtidMode2Or3RequiresEnforceGtidConsistencyOn(err error) bool {
-    result := Isa(err, ER_GTID_MODE_2_OR_3_REQUIRES_ENFORCE_GTID_CONSISTENCY_ON)
     return result
 }
 
@@ -8013,13 +7947,6 @@ func IsServerErrorCantSetGtidNextToAnonymousWhenGtidModeIsOn(err error) bool {
 // IsServerErrorCantSetGtidNextListToNonNullWhenGtidModeIsOff check mysql error is "@@SESSION.GTID_NEXT_LIST cannot be set to a non-NULL value when @@GLOBAL.GTID_MODE = OFF. " 
 func IsServerErrorCantSetGtidNextListToNonNullWhenGtidModeIsOff(err error) bool {
     result := Isa(err, ER_CANT_SET_GTID_NEXT_LIST_TO_NON_NULL_WHEN_GTID_MODE_IS_OFF)
-    return result
-}
-
-    
-// IsServerErrorFoundGtidEventWhenGtidModeIsOff check mysql error is "Found a Gtid_log_event or Previous_gtids_log_event when @@GLOBAL.GTID_MODE = OFF." 
-func IsServerErrorFoundGtidEventWhenGtidModeIsOff(err error) bool {
-    result := Isa(err, ER_FOUND_GTID_EVENT_WHEN_GTID_MODE_IS_OFF)
     return result
 }
 
@@ -8374,13 +8301,6 @@ func IsServerErrorFkColumnCannotChangeChild(err error) bool {
 }
 
     
-// IsServerErrorFkCannotDeleteParent check mysql error is "Cannot delete rows from table which is parent in a foreign key constraint '%s' of table '%s'" 
-func IsServerErrorFkCannotDeleteParent(err error) bool {
-    result := Isa(err, ER_FK_CANNOT_DELETE_PARENT)
-    return result
-}
-
-    
 // IsServerErrorUnused5 check mysql error is "Cannot delete rows from table which is parent in a foreign key constraint '%s' of table '%s'" 
 func IsServerErrorUnused5(err error) bool {
     result := Isa(err, ER_UNUSED5)
@@ -8503,13 +8423,6 @@ func IsServerErrorAlterOperationNotSupportedReasonColumnType(err error) bool {
 // IsServerErrorAlterOperationNotSupportedReasonFkCheck check mysql error is "Adding foreign keys needs foreign_key_checks=OFF" 
 func IsServerErrorAlterOperationNotSupportedReasonFkCheck(err error) bool {
     result := Isa(err, ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_FK_CHECK)
-    return result
-}
-
-    
-// IsServerErrorAlterOperationNotSupportedReasonIgnore check mysql error is "Creating unique indexes with IGNORE requires COPY algorithm to remove duplicate rows" 
-func IsServerErrorAlterOperationNotSupportedReasonIgnore(err error) bool {
-    result := Isa(err, ER_ALTER_OPERATION_NOT_SUPPORTED_REASON_IGNORE)
     return result
 }
 
@@ -9501,13 +9414,6 @@ func IsServerErrorGeneratedColumnFunctionIsNotAllowed(err error) bool {
 }
 
     
-// IsServerErrorKeyBasedOnGeneratedColumn check mysql error is "Key/Index cannot be defined on a virtual generated column." 
-func IsServerErrorKeyBasedOnGeneratedColumn(err error) bool {
-    result := Isa(err, ER_KEY_BASED_ON_GENERATED_COLUMN)
-    return result
-}
-
-    
 // IsServerErrorUnsupportedAlterInplaceOnVirtualColumn check mysql error is "INPLACE ADD or DROP of virtual columns cannot be combined with other ALTER TABLE actions" 
 func IsServerErrorUnsupportedAlterInplaceOnVirtualColumn(err error) bool {
     result := Isa(err, ER_UNSUPPORTED_ALTER_INPLACE_ON_VIRTUAL_COLUMN)
@@ -9686,13 +9592,6 @@ func IsServerErrorWarnUnknownQbName(err error) bool {
 // IsServerErrorUnresolvedHintName check mysql error is "Unresolved name %s for %s hint" 
 func IsServerErrorUnresolvedHintName(err error) bool {
     result := Isa(err, ER_UNRESOLVED_HINT_NAME)
-    return result
-}
-
-    
-// IsServerErrorWarnDeprecatedSqlmodeUnset check mysql error is "Unsetting sql mode '%s' is deprecated. It will be made read-only in a future release." 
-func IsServerErrorWarnDeprecatedSqlmodeUnset(err error) bool {
-    result := Isa(err, ER_WARN_DEPRECATED_SQLMODE_UNSET)
     return result
 }
 
@@ -10750,13 +10649,6 @@ func IsClientErrorConnUnknowProtocol(err error) bool {
 // IsClientErrorInvalidConnHandle check mysql error is "Invalid connection handle " 
 func IsClientErrorInvalidConnHandle(err error) bool {
     result := Isa(err, CR_INVALID_CONN_HANDLE)
-    return result
-}
-
-    
-// IsClientErrorSecureAuth check mysql error is "Connection using old (pre-4.1.1) authentication protocol refused (client option 'secure_auth' enabled)" 
-func IsClientErrorSecureAuth(err error) bool {
-    result := Isa(err, CR_SECURE_AUTH)
     return result
 }
 

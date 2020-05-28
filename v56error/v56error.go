@@ -563,7 +563,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     1554: definition.ErrorDefinition{ErrorNumber:1554, ErrorType:"ServerError", Symbol:"ER_WARN_DEPRECATED_SYNTAX_WITH_VER", SQLState:"HY000", Message:"The syntax '%s' is deprecated and will be removed in MySQL %s. Please use %s instead ", Description:"", MySQLVersion:"5.6"},
     1555: definition.ErrorDefinition{ErrorNumber:1555, ErrorType:"ServerError", Symbol:"ER_CANT_WRITE_LOCK_LOG_TABLE", SQLState:"HY000", Message:"You can't write-lock a log table. Only read access is possible ", Description:"", MySQLVersion:"5.6"},
     1556: definition.ErrorDefinition{ErrorNumber:1556, ErrorType:"ServerError", Symbol:"ER_CANT_LOCK_LOG_TABLE", SQLState:"HY000", Message:"You can't use locks with log tables. ", Description:"", MySQLVersion:"5.6"},
-    1557: definition.ErrorDefinition{ErrorNumber:1557, ErrorType:"ServerError", Symbol:"ER_FOREIGN_DUPLICATE_KEY", SQLState:"23000", Message:"Upholding foreign key constraints for table '%s', entry '%s', key %d would lead to a duplicate entry", Description:"ER_FOREIGN_DUPLICATE_KEY was removed after 5.6.3. ", MySQLVersion:"5.6"},
     1557: definition.ErrorDefinition{ErrorNumber:1557, ErrorType:"ServerError", Symbol:"ER_FOREIGN_DUPLICATE_KEY_OLD_UNUSED", SQLState:"23000", Message:"Upholding foreign key constraints for table '%s', entry '%s', key %d would lead to a duplicate entry", Description:"ER_FOREIGN_DUPLICATE_KEY_OLD_UNUSED was added in 5.6.4. ", MySQLVersion:"5.6"},
     1558: definition.ErrorDefinition{ErrorNumber:1558, ErrorType:"ServerError", Symbol:"ER_COL_COUNT_DOESNT_MATCH_PLEASE_UPDATE", SQLState:"HY000", Message:"Column count of mysql.%s is wrong. Expected %d, found %d. Created with MySQL %d, now running %d. Please use mysql_upgrade to fix this error. ", Description:"", MySQLVersion:"5.6"},
     1559: definition.ErrorDefinition{ErrorNumber:1559, ErrorType:"ServerError", Symbol:"ER_TEMP_TABLE_PREVENTS_SWITCH_OUT_OF_RBR", SQLState:"HY000", Message:"Cannot switch out of the row-based binary log format when the session has open temporary tables ", Description:"", MySQLVersion:"5.6"},
@@ -575,7 +574,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     1565: definition.ErrorDefinition{ErrorNumber:1565, ErrorType:"ServerError", Symbol:"ER_DDL_LOG_ERROR", SQLState:"HY000", Message:"Error in DDL log ", Description:"", MySQLVersion:"5.6"},
     1566: definition.ErrorDefinition{ErrorNumber:1566, ErrorType:"ServerError", Symbol:"ER_NULL_IN_VALUES_LESS_THAN", SQLState:"HY000", Message:"Not allowed to use NULL value in VALUES LESS THAN ", Description:"", MySQLVersion:"5.6"},
     1567: definition.ErrorDefinition{ErrorNumber:1567, ErrorType:"ServerError", Symbol:"ER_WRONG_PARTITION_NAME", SQLState:"HY000", Message:"Incorrect partition name ", Description:"", MySQLVersion:"5.6"},
-    1568: definition.ErrorDefinition{ErrorNumber:1568, ErrorType:"ServerError", Symbol:"ER_CANT_CHANGE_TX_ISOLATION", SQLState:"25001", Message:"Transaction isolation level can't be changed while a transaction is in progress", Description:"ER_CANT_CHANGE_TX_ISOLATION was removed after 5.6.4. ", MySQLVersion:"5.6"},
     1568: definition.ErrorDefinition{ErrorNumber:1568, ErrorType:"ServerError", Symbol:"ER_CANT_CHANGE_TX_CHARACTERISTICS", SQLState:"25001", Message:"Transaction characteristics can't be changed while a transaction is in progress", Description:"ER_CANT_CHANGE_TX_CHARACTERISTICS was added in 5.6.5. ", MySQLVersion:"5.6"},
     1569: definition.ErrorDefinition{ErrorNumber:1569, ErrorType:"ServerError", Symbol:"ER_DUP_ENTRY_AUTOINCREMENT_CASE", SQLState:"HY000", Message:"ALTER TABLE causes auto_increment resequencing, resulting in duplicate entry '%s' for key '%s' ", Description:"", MySQLVersion:"5.6"},
     1570: definition.ErrorDefinition{ErrorNumber:1570, ErrorType:"ServerError", Symbol:"ER_EVENT_MODIFY_QUEUE_ERROR", SQLState:"HY000", Message:"Internal scheduler error %d ", Description:"", MySQLVersion:"5.6"},
@@ -729,7 +727,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     1718: definition.ErrorDefinition{ErrorNumber:1718, ErrorType:"ServerError", Symbol:"ER_BINLOG_UNSAFE_CREATE_REPLACE_SELECT", SQLState:"HY000", Message:"CREATE... REPLACE SELECT is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are replaced. This order cannot be predicted and may differ on master and the slave.", Description:"ER_BINLOG_UNSAFE_CREATE_REPLACE_SELECT was added in 5.6.4. ", MySQLVersion:"5.6"},
     1719: definition.ErrorDefinition{ErrorNumber:1719, ErrorType:"ServerError", Symbol:"ER_BINLOG_UNSAFE_UPDATE_IGNORE", SQLState:"HY000", Message:"UPDATE IGNORE is unsafe because the order in which rows are updated determines which (if any) rows are ignored. This order cannot be predicted and may differ on master and the slave.", Description:"ER_BINLOG_UNSAFE_UPDATE_IGNORE was added in 5.6.4. ", MySQLVersion:"5.6"},
     1720: definition.ErrorDefinition{ErrorNumber:1720, ErrorType:"ServerError", Symbol:"ER_PLUGIN_NO_UNINSTALL", SQLState:"HY000", Message:"Plugin '%s' is marked as not dynamically uninstallable. You have to stop the server to uninstall it.", Description:"ER_PLUGIN_NO_UNINSTALL was added in 5.6.4. ", MySQLVersion:"5.6"},
-    1721: definition.ErrorDefinition{ErrorNumber:1721, ErrorType:"ServerError", Symbol:"ER_CANT_LOCK_RPL_INFO_TABLE", SQLState:"HY000", Message:"You can't use locks with rpl info tables.", Description:"ER_CANT_LOCK_RPL_INFO_TABLE was added in 5.6.1, removed after 5.6.3. ", MySQLVersion:"5.6"},
     1721: definition.ErrorDefinition{ErrorNumber:1721, ErrorType:"ServerError", Symbol:"ER_PLUGIN_NO_INSTALL", SQLState:"HY000", Message:"Plugin '%s' is marked as not dynamically installable. You have to stop the server to install it.", Description:"ER_PLUGIN_NO_INSTALL was added in 5.6.4. ", MySQLVersion:"5.6"},
     1722: definition.ErrorDefinition{ErrorNumber:1722, ErrorType:"ServerError", Symbol:"ER_BINLOG_UNSAFE_WRITE_AUTOINC_SELECT", SQLState:"HY000", Message:"Statements writing to a table with an auto-increment column after selecting from another table are unsafe because the order in which rows are retrieved determines what (if any) rows will be written. This order cannot be predicted and may differ on master and the slave.", Description:"ER_BINLOG_UNSAFE_WRITE_AUTOINC_SELECT was added in 5.6.5. ", MySQLVersion:"5.6"},
     1723: definition.ErrorDefinition{ErrorNumber:1723, ErrorType:"ServerError", Symbol:"ER_BINLOG_UNSAFE_CREATE_SELECT_AUTOINC", SQLState:"HY000", Message:"CREATE TABLE... SELECT... on a table with an auto-increment column is unsafe because the order in which rows are retrieved by the SELECT determines which (if any) rows are inserted. This order cannot be predicted and may differ on master and the slave.", Description:"ER_BINLOG_UNSAFE_CREATE_SELECT_AUTOINC was added in 5.6.5. ", MySQLVersion:"5.6"},
@@ -755,7 +752,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     1743: definition.ErrorDefinition{ErrorNumber:1743, ErrorType:"ServerError", Symbol:"ER_NETWORK_READ_EVENT_CHECKSUM_FAILURE", SQLState:"HY000", Message:"Replication event checksum verification failed while reading from network.", Description:"ER_NETWORK_READ_EVENT_CHECKSUM_FAILURE was added in 5.6.1. ", MySQLVersion:"5.6"},
     1744: definition.ErrorDefinition{ErrorNumber:1744, ErrorType:"ServerError", Symbol:"ER_BINLOG_READ_EVENT_CHECKSUM_FAILURE", SQLState:"HY000", Message:"Replication event checksum verification failed while reading from a log file.", Description:"ER_BINLOG_READ_EVENT_CHECKSUM_FAILURE was added in 5.6.1. ", MySQLVersion:"5.6"},
     1745: definition.ErrorDefinition{ErrorNumber:1745, ErrorType:"ServerError", Symbol:"ER_BINLOG_STMT_CACHE_SIZE_GREATER_THAN_MAX", SQLState:"HY000", Message:"Option binlog_stmt_cache_size (%lu) is greater than max_binlog_stmt_cache_size (%lu)", Description:"ER_BINLOG_STMT_CACHE_SIZE_GREATER_THAN_MAX was added in 5.6.1. ", MySQLVersion:"5.6"},
-    1746: definition.ErrorDefinition{ErrorNumber:1746, ErrorType:"ServerError", Symbol:"ER_NO_SUCH_PARTITION", SQLState:"HY000", Message:"partition '%s' doesn't exist", Description:"ER_NO_SUCH_PARTITION was added in 5.6.2, removed after 5.6.5. ", MySQLVersion:"5.6"},
     1746: definition.ErrorDefinition{ErrorNumber:1746, ErrorType:"ServerError", Symbol:"ER_CANT_UPDATE_TABLE_IN_CREATE_TABLE_SELECT", SQLState:"HY000", Message:"Can't update table '%s' while '%s' is being created.", Description:"ER_CANT_UPDATE_TABLE_IN_CREATE_TABLE_SELECT was added in 5.6.2. ", MySQLVersion:"5.6"},
     1747: definition.ErrorDefinition{ErrorNumber:1747, ErrorType:"ServerError", Symbol:"ER_PARTITION_CLAUSE_ON_NONPARTITIONED", SQLState:"HY000", Message:"PARTITION () clause on non partitioned table", Description:"ER_PARTITION_CLAUSE_ON_NONPARTITIONED was added in 5.6.2. ", MySQLVersion:"5.6"},
     1748: definition.ErrorDefinition{ErrorNumber:1748, ErrorType:"ServerError", Symbol:"ER_ROW_DOES_NOT_MATCH_GIVEN_PARTITION_SET", SQLState:"HY000", Message:"Found a row not matching the given partition set", Description:"ER_ROW_DOES_NOT_MATCH_GIVEN_PARTITION_SET was added in 5.6.2. ", MySQLVersion:"5.6"},
@@ -789,7 +785,6 @@ var ErrorMap = map[int]definition.ErrorDefinition{
     1776: definition.ErrorDefinition{ErrorNumber:1776, ErrorType:"ServerError", Symbol:"ER_BAD_SLAVE_AUTO_POSITION", SQLState:"HY000", Message:"Parameters MASTER_LOG_FILE, MASTER_LOG_POS, RELAY_LOG_FILE and RELAY_LOG_POS cannot be set when MASTER_AUTO_POSITION is active.", Description:"ER_BAD_SLAVE_AUTO_POSITION was added in 5.6.5. ", MySQLVersion:"5.6"},
     1777: definition.ErrorDefinition{ErrorNumber:1777, ErrorType:"ServerError", Symbol:"ER_AUTO_POSITION_REQUIRES_GTID_MODE_ON", SQLState:"HY000", Message:"CHANGE MASTER TO MASTER_AUTO_POSITION = 1 can only be executed when @@GLOBAL.GTID_MODE = ON.", Description:"ER_AUTO_POSITION_REQUIRES_GTID_MODE_ON was added in 5.6.5. ", MySQLVersion:"5.6"},
     1778: definition.ErrorDefinition{ErrorNumber:1778, ErrorType:"ServerError", Symbol:"ER_CANT_DO_IMPLICIT_COMMIT_IN_TRX_WHEN_GTID_NEXT_IS_SET", SQLState:"HY000", Message:"Cannot execute statements with implicit commit inside a transaction when @@SESSION.GTID_NEXT != AUTOMATIC.", Description:"ER_CANT_DO_IMPLICIT_COMMIT_IN_TRX_WHEN_GTID_NEXT_IS_SET was added in 5.6.5. ", MySQLVersion:"5.6"},
-    1779: definition.ErrorDefinition{ErrorNumber:1779, ErrorType:"ServerError", Symbol:"ER_GTID_MODE_2_OR_3_REQUIRES_DISABLE_GTID_UNSAFE_STATEMENTS_ON", SQLState:"HY000", Message:"GTID_MODE = ON or GTID_MODE = UPGRADE_STEP_2 requires DISABLE_GTID_UNSAFE_STATEMENTS = 1.", Description:"ER_GTID_MODE_2_OR_3_REQUIRES_DISABLE_GTID_UNSAFE_STATEMENTS_ON was added in 5.6.5, removed after 5.6.8. ", MySQLVersion:"5.6"},
     1779: definition.ErrorDefinition{ErrorNumber:1779, ErrorType:"ServerError", Symbol:"ER_GTID_MODE_2_OR_3_REQUIRES_ENFORCE_GTID_CONSISTENCY_ON", SQLState:"HY000", Message:"@@GLOBAL.GTID_MODE = ON or UPGRADE_STEP_2 requires @@GLOBAL.ENFORCE_GTID_CONSISTENCY = 1.", Description:"ER_GTID_MODE_2_OR_3_REQUIRES_ENFORCE_GTID_CONSISTENCY_ON was added in 5.6.9. ", MySQLVersion:"5.6"},
     1780: definition.ErrorDefinition{ErrorNumber:1780, ErrorType:"ServerError", Symbol:"ER_GTID_MODE_REQUIRES_BINLOG", SQLState:"HY000", Message:"@@GLOBAL.GTID_MODE = ON or UPGRADE_STEP_1 or UPGRADE_STEP_2 requires --log-bin and --log-slave-updates.", Description:"ER_GTID_MODE_REQUIRES_BINLOG was added in 5.6.5. ", MySQLVersion:"5.6"},
     1781: definition.ErrorDefinition{ErrorNumber:1781, ErrorType:"ServerError", Symbol:"ER_CANT_SET_GTID_NEXT_TO_GTID_WHEN_GTID_MODE_IS_OFF", SQLState:"HY000", Message:"@@SESSION.GTID_NEXT cannot be set to UUID:NUMBER when @@GLOBAL.GTID_MODE = OFF.", Description:"ER_CANT_SET_GTID_NEXT_TO_GTID_WHEN_GTID_MODE_IS_OFF was added in 5.6.5. ", MySQLVersion:"5.6"},
@@ -1554,7 +1549,6 @@ ER_HASHCHK int = 1000
     ER_WARN_DEPRECATED_SYNTAX_WITH_VER int = 1554
     ER_CANT_WRITE_LOCK_LOG_TABLE int = 1555
     ER_CANT_LOCK_LOG_TABLE int = 1556
-    ER_FOREIGN_DUPLICATE_KEY int = 1557
     ER_FOREIGN_DUPLICATE_KEY_OLD_UNUSED int = 1557
     ER_COL_COUNT_DOESNT_MATCH_PLEASE_UPDATE int = 1558
     ER_TEMP_TABLE_PREVENTS_SWITCH_OUT_OF_RBR int = 1559
@@ -1566,7 +1560,6 @@ ER_HASHCHK int = 1000
     ER_DDL_LOG_ERROR int = 1565
     ER_NULL_IN_VALUES_LESS_THAN int = 1566
     ER_WRONG_PARTITION_NAME int = 1567
-    ER_CANT_CHANGE_TX_ISOLATION int = 1568
     ER_CANT_CHANGE_TX_CHARACTERISTICS int = 1568
     ER_DUP_ENTRY_AUTOINCREMENT_CASE int = 1569
     ER_EVENT_MODIFY_QUEUE_ERROR int = 1570
@@ -1720,7 +1713,6 @@ ER_HASHCHK int = 1000
     ER_BINLOG_UNSAFE_CREATE_REPLACE_SELECT int = 1718
     ER_BINLOG_UNSAFE_UPDATE_IGNORE int = 1719
     ER_PLUGIN_NO_UNINSTALL int = 1720
-    ER_CANT_LOCK_RPL_INFO_TABLE int = 1721
     ER_PLUGIN_NO_INSTALL int = 1721
     ER_BINLOG_UNSAFE_WRITE_AUTOINC_SELECT int = 1722
     ER_BINLOG_UNSAFE_CREATE_SELECT_AUTOINC int = 1723
@@ -1746,7 +1738,6 @@ ER_HASHCHK int = 1000
     ER_NETWORK_READ_EVENT_CHECKSUM_FAILURE int = 1743
     ER_BINLOG_READ_EVENT_CHECKSUM_FAILURE int = 1744
     ER_BINLOG_STMT_CACHE_SIZE_GREATER_THAN_MAX int = 1745
-    ER_NO_SUCH_PARTITION int = 1746
     ER_CANT_UPDATE_TABLE_IN_CREATE_TABLE_SELECT int = 1746
     ER_PARTITION_CLAUSE_ON_NONPARTITIONED int = 1747
     ER_ROW_DOES_NOT_MATCH_GIVEN_PARTITION_SET int = 1748
@@ -1780,7 +1771,6 @@ ER_HASHCHK int = 1000
     ER_BAD_SLAVE_AUTO_POSITION int = 1776
     ER_AUTO_POSITION_REQUIRES_GTID_MODE_ON int = 1777
     ER_CANT_DO_IMPLICIT_COMMIT_IN_TRX_WHEN_GTID_NEXT_IS_SET int = 1778
-    ER_GTID_MODE_2_OR_3_REQUIRES_DISABLE_GTID_UNSAFE_STATEMENTS_ON int = 1779
     ER_GTID_MODE_2_OR_3_REQUIRES_ENFORCE_GTID_CONSISTENCY_ON int = 1779
     ER_GTID_MODE_REQUIRES_BINLOG int = 1780
     ER_CANT_SET_GTID_NEXT_TO_GTID_WHEN_GTID_MODE_IS_OFF int = 1781
@@ -5904,13 +5894,6 @@ func IsServerErrorCantLockLogTable(err error) bool {
 }
 
     
-// IsServerErrorForeignDuplicateKey check mysql error is "Upholding foreign key constraints for table '%s', entry '%s', key %d would lead to a duplicate entry" 
-func IsServerErrorForeignDuplicateKey(err error) bool {
-    result := Isa(err, ER_FOREIGN_DUPLICATE_KEY)
-    return result
-}
-
-    
 // IsServerErrorForeignDuplicateKeyOldUnused check mysql error is "Upholding foreign key constraints for table '%s', entry '%s', key %d would lead to a duplicate entry" 
 func IsServerErrorForeignDuplicateKeyOldUnused(err error) bool {
     result := Isa(err, ER_FOREIGN_DUPLICATE_KEY_OLD_UNUSED)
@@ -5984,13 +5967,6 @@ func IsServerErrorNullInValuesLessThan(err error) bool {
 // IsServerErrorWrongPartitionName check mysql error is "Incorrect partition name " 
 func IsServerErrorWrongPartitionName(err error) bool {
     result := Isa(err, ER_WRONG_PARTITION_NAME)
-    return result
-}
-
-    
-// IsServerErrorCantChangeTxIsolation check mysql error is "Transaction isolation level can't be changed while a transaction is in progress" 
-func IsServerErrorCantChangeTxIsolation(err error) bool {
-    result := Isa(err, ER_CANT_CHANGE_TX_ISOLATION)
     return result
 }
 
@@ -7066,13 +7042,6 @@ func IsServerErrorPluginNoUninstall(err error) bool {
 }
 
     
-// IsServerErrorCantLockRplInfoTable check mysql error is "You can't use locks with rpl info tables." 
-func IsServerErrorCantLockRplInfoTable(err error) bool {
-    result := Isa(err, ER_CANT_LOCK_RPL_INFO_TABLE)
-    return result
-}
-
-    
 // IsServerErrorPluginNoInstall check mysql error is "Plugin '%s' is marked as not dynamically installable. You have to stop the server to install it." 
 func IsServerErrorPluginNoInstall(err error) bool {
     result := Isa(err, ER_PLUGIN_NO_INSTALL)
@@ -7244,13 +7213,6 @@ func IsServerErrorBinlogReadEventChecksumFailure(err error) bool {
 // IsServerErrorBinlogStmtCacheSizeGreaterThanMax check mysql error is "Option binlog_stmt_cache_size (%lu) is greater than max_binlog_stmt_cache_size (%lu)" 
 func IsServerErrorBinlogStmtCacheSizeGreaterThanMax(err error) bool {
     result := Isa(err, ER_BINLOG_STMT_CACHE_SIZE_GREATER_THAN_MAX)
-    return result
-}
-
-    
-// IsServerErrorNoSuchPartition check mysql error is "partition '%s' doesn't exist" 
-func IsServerErrorNoSuchPartition(err error) bool {
-    result := Isa(err, ER_NO_SUCH_PARTITION)
     return result
 }
 
@@ -7482,13 +7444,6 @@ func IsServerErrorAutoPositionRequiresGtidModeOn(err error) bool {
 // IsServerErrorCantDoImplicitCommitInTrxWhenGtidNextIsSet check mysql error is "Cannot execute statements with implicit commit inside a transaction when @@SESSION.GTID_NEXT != AUTOMATIC." 
 func IsServerErrorCantDoImplicitCommitInTrxWhenGtidNextIsSet(err error) bool {
     result := Isa(err, ER_CANT_DO_IMPLICIT_COMMIT_IN_TRX_WHEN_GTID_NEXT_IS_SET)
-    return result
-}
-
-    
-// IsServerErrorGtidMode2Or3RequiresDisableGtidUnsafeStatementsOn check mysql error is "GTID_MODE = ON or GTID_MODE = UPGRADE_STEP_2 requires DISABLE_GTID_UNSAFE_STATEMENTS = 1." 
-func IsServerErrorGtidMode2Or3RequiresDisableGtidUnsafeStatementsOn(err error) bool {
-    result := Isa(err, ER_GTID_MODE_2_OR_3_REQUIRES_DISABLE_GTID_UNSAFE_STATEMENTS_ON)
     return result
 }
 
