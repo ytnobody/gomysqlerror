@@ -137,7 +137,7 @@ func parseItem(item *html.Node) definition.ErrorDefinition {
 		case "Error number":
 			errNum, _ := strconv.Atoi(parts[1])
 			ed.ErrorNumber = errNum
-			ed.ErrorType = resolveErrorType(errNum)
+			ed.ErrorType = definition.ResolveErrorType(errNum)
 		case "Symbol":
 			ed.Symbol = parts[1]
 		case "SQLSTATE":
@@ -150,14 +150,4 @@ func parseItem(item *html.Node) definition.ErrorDefinition {
 	}
 
 	return ed
-}
-
-func resolveErrorType(errNum int) string {
-	if errNum < 1000 {
-		return "GlobalError"
-	}
-	if errNum >= 2000 && errNum < 3000 {
-		return "ClientError"
-	}
-	return "ServerError"
 }
