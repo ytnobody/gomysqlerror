@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"regexp"
 	"strconv"
+	"strings"
 
 	"github.com/antchfx/htmlquery"
 	"github.com/ytnobody/gomysqlerror/definition"
@@ -11,7 +12,7 @@ import (
 )
 
 var (
-	URLFormat                = "https://dev.mysql.com/doc/refman/%s/en/%s"
+	URLFormat                = "https://dev.mysql.com/doc/mysql-errors/%s/en/%s"
 	GlobalErrorReferenceHTML = "global-error-reference.html"
 	ClientErrorReferenceHTML = "client-error-reference.html"
 	ServerErrorReferenceHTML = "server-error-reference.html"
@@ -97,7 +98,11 @@ func extractErrorDefinitionList(doc *html.Node, mysqlVersion string) ([]definiti
 
 	errDefList := []definition.ErrorDefinition{}
 	for _, item := range items {
-		errDef := parseItem(item)
+		ps, err := htmlquery.QueryAll(item, "/p")
+		if err != nil {
+			return nil, err
+		}
+		errDef := parseItem(ps)
 		errDef.MySQLVersion = mysqlVersion
 		errDefList = append(errDefList, errDef)
 	}
@@ -105,19 +110,27 @@ func extractErrorDefinitionList(doc *html.Node, mysqlVersion string) ([]definiti
 	return errDefList, nil
 }
 
-func parseItem(item *html.Node) definition.ErrorDefinition {
+func parseItem(items []*html.Node) definition.ErrorDefinition {
 	ed := definition.ErrorDefinition{}
 
-	innerText := htmlquery.InnerText(item)
+	innerTexts := []string{}
+	for _, item := range items {
+		innerTexts = append(innerTexts, htmlquery.InnerText(item))
+	}
+	innerText := strings.Join(innerTexts, ";\n")
 	rgx := regexp.MustCompile(";|\n +\n +")
 	messages := rgx.Split(innerText, -1)
 
 	for i, message := range messages {
-		rgx = regexp.MustCompile("\n +")
-		message = rgx.ReplaceAllString(message, " ")
+		rgx = regexp.MustCompile(" *Message:")
+		message = rgx.ReplaceAllString(message, "Message:")
+		rgx = regexp.MustCompile("\n *")
+		message = rgx.ReplaceAllString(message, "")
 		rgx = regexp.MustCompile("^ ")
 		message = rgx.ReplaceAllString(message, "")
 		rgx = regexp.MustCompile("\n$")
+		message = rgx.ReplaceAllString(message, "")
+		rgx = regexp.MustCompile("^\n+")
 		message = rgx.ReplaceAllString(message, "")
 		messages[i] = message
 	}
@@ -131,11 +144,12 @@ func parseItem(item *html.Node) definition.ErrorDefinition {
 		if len(message) < 1 {
 			continue
 		}
-		rgx = regexp.MustCompile(": ")
+		rgx = regexp.MustCompile(": *")
 		parts := rgx.Split(message, 2)
 		switch parts[0] {
 		case "Error number":
-			errNum, _ := strconv.Atoi(parts[1])
+			en, _ := strconv.Atoi(parts[1])
+			errNum := int64(en)
 			ed.ErrorNumber = errNum
 			ed.ErrorType = definition.ResolveErrorType(errNum)
 		case "Symbol":

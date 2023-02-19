@@ -7,7 +7,7 @@ import (
 )
 
 type ErrorDefinition struct {
-	ErrorNumber  int
+	ErrorNumber  int64
 	ErrorType    string
 	Symbol       string
 	SQLState     string
@@ -32,11 +32,12 @@ func FromError(inErr error) ErrorDefinition {
 		value := submatch[i]
 		switch key {
 		case "ErrorNumber":
-			errNum, err := strconv.Atoi(value)
+			en, err := strconv.Atoi(value)
 			if err != nil {
 				fmt.Printf("%#v\n", err)
 				return ed
 			}
+			errNum := int64(en)
 			ed.ErrorNumber = errNum
 			ed.ErrorType = ResolveErrorType(errNum)
 		case "Message":
@@ -47,7 +48,7 @@ func FromError(inErr error) ErrorDefinition {
 }
 
 // ResolveErrorType return error type string from ErrorNumber
-func ResolveErrorType(errNum int) string {
+func ResolveErrorType(errNum int64) string {
 	if errNum < 1000 {
 		return "GlobalError"
 	}

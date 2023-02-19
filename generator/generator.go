@@ -103,7 +103,7 @@ import (
     "github.com/imdario/mergo"
 )
 
-var ErrorMap = map[int]definition.ErrorDefinition{
+var ErrorMap = map[int64]definition.ErrorDefinition{
     %s
 }
 
@@ -120,7 +120,7 @@ func DefinitionByError(err error) definition.ErrorDefinition {
 }
 
 // Isa check a error data that isa specified error number
-func Isa(err error, errNum int) bool {
+func Isa(err error, errNum int64) bool {
     ed := DefinitionByError(err)
     if ed.ErrorNumber == errNum {
         return true
@@ -144,6 +144,7 @@ func generateVarCode(errDefList []definition.ErrorDefinition) string {
 	varList := []string{}
 	for _, errDef := range errDefList {
 		varLine := fmt.Sprintf("%d: %#v,", errDef.ErrorNumber, errDef)
+		varLine = strings.ReplaceAll(varLine, "definition.ErrorDefinition", "")
 		varList = append(varList, varLine)
 	}
 	varCode := strings.Join(varList, "\n    ")
@@ -153,7 +154,7 @@ func generateVarCode(errDefList []definition.ErrorDefinition) string {
 func generateConstCode(errDefList []definition.ErrorDefinition) string {
 	constList := []string{}
 	for _, errDef := range errDefList {
-		constLine := fmt.Sprintf("%s int = %d", errDef.Symbol, errDef.ErrorNumber)
+		constLine := fmt.Sprintf("%s int64 = %d", errDef.Symbol, errDef.ErrorNumber)
 		constList = append(constList, constLine)
 	}
 	constCode := strings.Join(constList, "\n    ")
